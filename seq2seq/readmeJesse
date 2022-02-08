@@ -1,0 +1,43 @@
+20210729
+
+It is necessary to do 
+
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64
+export CUDADIR=/usr/local/cuda-10.0
+
+Because it doesn't work when the script does this.
+
+
+202012281314BJ
+please update URLs
+
+# seq2seq is base on the structure given by Cho et al.
+# https://arxiv.org/pdf/1406.1078.pdf
+# here is some context:
+# http://web.stanford.edu/class/cs20si/lectures/slides_13.pdf
+
+
+202010221606BJ
+This came from 
+https://google.github.io/seq2seq/getting_started/
+
+this doesnt work on install,
+however after fixing some errors via
+
+https://medium.com/@aloofness54/fix-google-seq2seq-installation-errors-4a1155b13f73
+
+
+then it works
+
+training demos were installed
+via a script that makes 'toy' data, a toy language
+
+the script generates the language and makes directories that are 
+well organized and can be a template for a working structure
+
+they are initially stored in 
+#~/nmt_data/
+
+
+
+

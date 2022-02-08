@@ -1,0 +1,735 @@
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+	<style type="text/css">
+	
+		<!--
+		
+		body,td,th，p, div{
+			Xtext-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			-Xwebkit-text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			-Xmoz-text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			*Xfilter: Glow(color=#fff, strength=1);
+ 			Xfont-size: 6vw;
+		}
+	
+@font-face {
+	font-family: 'CormorantGaramond-Light';
+    src: url('http://kuai.su/CormorantGaramond-Light.ttf');
+}
+@font-face {
+	font-family: 'CormorantGaramond-Regular';
+    src: url('http://kuai.su/CormorantGaramond-Regular.ttf');
+}
+
+
+
+body {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	font-size: 16pt;
+	Xfont-weight: 800;
+	padding:4vw;
+}
+.podo {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	font-size: 14pt;
+	Xfont-weight: 800;
+	
+}
+
+.dp {
+
+    display: inline-flex;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    Xfont-size: 8vw;
+
+}
+	-->
+	</style>
+
+
+
+
+</head>
+
+     <script>
+
+		 var acc="";
+		 var localOID=0;
+		 var lastLocalOID=0;
+		 var consumptionVectorO=0;
+		 
+
+			var sentenceIndex =
+[["57","4681","4682","878","4684","57","653","41","4687","1045","140","4690"],["4690","4691","81","4681","160","57","4485","1397","2696","230","4698","4699","270","4701","4702","698","4704","525","4706","1014","73","545","4376","270","546"],["55","73","1038","41","4714","268","4704","4716","597","4718","117","74","4721","160","2121","79","230","4724"],["55","73","1038","41","4725","1045","258","638","270","125","4729","3459","79","138","2921"],["73","2113","3214","41","4735","4736","140","4737","160","79","2084","57","2953","140","554","1045"],["55","46","4742","4485","4743","4744","140","57","1026","274","1013","200","4749","79","57","3625","1397","2696","230","4751","268","73","2318","562"],["4754","4755","2696","230","4756","79","3838","4737","41","4485","4743"],["4758","160","57","597","163","160","2245","117","602","4762","268","48","4764","750","4766","117","554","4735","4767"],["4768","4714","140","4704","525","160","4062","1281","493","48","4772","117","4773","258","1057","1045","79","3620","307","538","117","3544","117","1829","4780","580","4782","4783","538","4784","117","593","4786"],["55","73","4163","1012","41","4682","4789","4790","4789","117","4790","4791","93","160","3263","163","73","4794","41","4790","4795","274","4796"],["229","776","73","4790","4799","4800","4801"],["71","198","255","4805","41","4806","4801","117","4807"],["4801","160","57","4808","3321"],["93","416","230","4811","79","1224","81","4813","182","4815","4816"],["79","3265","73","4801","93","37","230","4819","41","1025","1301","79","57","1224","218","270","216","165","55","311","1777","4827","2111"],["1224","4829","274","573","93","65","117","3013","93","4833"],["4807","160","57","4834","4799"],["93","84","1399","4681","3061","117","93","274","4838","343","93","4840","73","4841","41","4681"],["4842","198","4843","4795","182","4844","4845","81","2258","182","1234","117","198","4848","1231"],["1232","4851","81","4852"],["4853"],["4854","4855","4856"],["4857"],["61","263","767"],["229","37","2583","57","4862","1025","1301"],["254","35","407"],["4801","274","4866","343","73","4681","278","79","35"],["61","100","767"],["61","263","767"],["229","2583","57","4862","2583","57","4801","2583","57","4801","1025","1301"],["254","4869","4870","4869","4871"],["35","407"],["4801","274","4866"],["343","4872","120","513","270","343","4875","4876","73","4681","278","35"],["4877"],["4878"]]
+		;
+
+
+
+		var	WHO =
+["1|0","2|1","3|2","4|3","5|4","6|5","7|6","8|7","9|8","10|9","11|10","12|11","13|12","14|13","15|14","16|15","17|16","18|17","19|18","20|19","21|20","22|21","23|22","24|23","25|24","26|25","27|26","28|27","29|28","64|29","90|30","91|31","911|32","who|33","man|34","you|35","woman|36","must|37","stand|38","an|39","ocean|40","of|41","crying|42","but|43","stops|44","at|45","this|46","beach|47","human|48","oceans'|49","i|50","haven't|51","seen|52","inch|53","daylight|54","in|55","most|56","a|57","week|58","i'm|59","hiding|60","all|61","your|62","questions|63","away|64","up|65","my|66","sleeve|67","arm|68","ends|69","fist|70","there|71","lives|72","the|73","hand|74","can't|75","reach|76","teach|77","cities|78","to|79","rise|80","for|81","children|82","ride|83","can|84","rent|85","room|86","one|87","hundred|88","dollars|89","it's|90","bit|91","live|92","it|93","suits|94","mind|95","peek|96","inside|97","come|98","do|99","hear|100","spend|101","those|102","years|103","so|104","soon|105","part|106","ground|107","feet|108","seldom|109","leave|110","as|111","head|112","runs|113","around|114","lips|115","fool|116","and|117","money|118","pushes|119","on|120","don't|121","give|122","what|123","need|124","no|125","survival|126","animal|127","that's|128","short|129","attention|130","build|131","wealth|132","slow|133","roller|134","save|135","son|136","pride|137","protect|138","daughter|139","from|140","she's|141","done|142","trips|143","wicked|144","peace|145","pure|146","gift|147","life|148","there's|149","cure|150","subjugate|151","race|152","owe|153","fortune|154","bank|155","hong|156","kong|157","stature|158","future|159","is|160","long|161","bite|162","that|163","they|164","back|165","gone|166","watched|167","world|168","likes|169","watch|170","impossible|171","things|172","rush|173","end|174","want|175","living's|176","food|177","dreams|178","wake|179","preface|180","his|181","with|182","keys|183","car|184","she|185","loves|186","her|187","daddy|188","he|189","opens|190","doors|191","let|192","love|193","slide|194","woke|195","poor|196","know|197","are|198","bent|199","over|200","bar|201","smokes|202","mean|203","cigar|204","street|205","preacher|206","yourself|207","go|208","care|209","how|210","them|211","yes|212","gets|213","wants|214","i'll|215","put|216","memory|217","box|218","father|219","took|220","child|221","field|222","said|223","look|224","sun|225","kneel|226","waiting|227","spring|228","we|229","be|230","happy|231","together|232","again|233","laughed|234","unhappily|235","way|236","walk|237","not|238","quite|239","right|240","arms|241","swing|242","out|243","learned|244","told|245","keep|246","control|247","followed|248","closely|249","was|250","taught|251","leaks|252","red|253","why|254","two|255","am|256","sorry|257","have|258","time|259","gerald|260","cannot|261","stay|262","here|263","place|264","killing|265","me|266","fading|267","by|268","hour|269","or|270","another|271","before|272","comes|273","will|274","just|275","get|276","you've|277","got|278","wisdom|279","disease|280","you're|281","too|282","sick|283","worlds|284","like|285","could|286","never|287","show|288","winter|289","nears|290","paler|291","i've|292","been|293","does|294","matter|295","rung|296","fall|297","off|298","ladder|299","kitchen|300","polishing|301","silver|302","fierce|303","miracle|304","standing|305","proof|306","their|307","once|308","america|309","believed|310","its|311","youth|312","truth|313","line|314","follow|315","stride|316","open|317","outside|318","crawl|319","die|320","tomorrow|321","gonna|322","shout|323","won't|324","want's|325","screws|326","someone|327","home|328","kiss|329","wise|330","nothing|331","tears|332","cradle's|333","pushed|334","rocker|335","hears|336","babe|337","scream|338","louder|339","some|340","instrument|341","controls|342","if|343","lost|344","they'll|345","mother|346","nature|347","push|348","down|349","tools|350","savior|351","tell|352","what's|353","fulfill|354","shifter|355","failure|356","eats|357","young|358","says|359","ugliness|360","abandoness|361","old|362","parents|363","东区熊|364","city|365","planet|366","cell|367","organ|368","empress|369","empire|370","would|371","lead|372","turn|373","see|374","star|375","guide|376","against|377","darkness|378","entwine|379","then|380","shine|381","scientist|382","study|383","research|384","holding|385","hands|386","hold|387","wrap|388","ideas|389","last|390","machine|391","trust|392","famous|393","shoddy|394","work|395","kicks|396","perfect|397","quietly|398","deny|399","everything|400","assume|401","mine|402","super|403","coaster|404","moves|405","without|406","say|407","mockingly|408","joke|409","playing|410","more|411","scared|412","taking|413","seriously|414","our|415","should|416","make|417","tried|418","already|419","ready|420","fight|421","war|422","sorrow|423","culture|424","same|425","break|426","good|427","enough|428","talk|429","him|430","anymore|431","he's|432","archetype|433","these|434","believe,|435","rest|436","'till|437","betty|438","better|439","than|440","yours|441","conversations|442","spoken|443","hope|444","sympathetic|445","understanding|446","systems|447","move|448","survive|449","program|450","creational|451","barrier|452","fosters|453","recreational|454","theft|455","standardized|456","dream|457","beautiful|458","cadence|459","piano|460","tech|461","foods|462","only|463","hurt|464","desperate|465","confederate|466","circle|467","trap|468","nominal|469","believers|470","critical|471","destiny|472","fancy|473","crawler|474","believes|475","sings|476","makes|477","dinner|478","us|479","notice|480","dime|481","fine|482","job|483","except|484","when|485","cold|486","near|487","st|488","george|489","ghettos|490","any|491","closer|492","where|493","fade|494","black|495","knows|496","lying|497","both|498","whatever|499","prove|500","wears|501","welcome|502","shoes|503","loose|504","used|505","blue|506","eyed|507","vision|508","backroom|509","ashamed|510","position|511","threat|512","you,|513","tries|514","older|515","time,|516","has|517","answers|518","had|519","button|520","brother|521","lit|522","picks|523","square|524","fingers|525","plays|526","smile|527","adored;|528","pose|529","smiles|530","shining|531","one,|532","teeth|533","less|534","feeling|535","pain|536","painted|537","face|538","bitter|539","thinks|540","shows|541","tells|542","windows|543","bleary|544","mouth|545","eyes|546","fighting|547","light|548","dark|549","meant|550","always|551","feared|552","because|553","other|554","who's|555","ever|556","gotten|557","wander|558","till|559","free|560","expanding|561","system|562","perhaps|563","new|564","participants|565","competition|566","entropy|567","parking|568","garage|569","filter|570","noise|571","situation|572","pick|573","best|574","lot|575","help|576","believe|577","looks|578","doll|579","practices|580","sometimes|581","turns|582","watching|583","along|584","seven|585","were|586","take|587","she'd|588","spin|589","hit|590","aloud|591","accept|592","eye|593","fuck|594","rides|595","whim|596","behavior|597","reinforced|598","close|599","opened|600","toward|601","easily|602","dissuaded|603","catch|604","empty|605","starlight|606","refugee|607","follows|608","falling|609","maybe|610","drown|611","dying|612","slowly|613","run|614","aground|615","picked|616","made|617","unusual|618","died|619","times|620","frustrated|621","chose|622","choosing|623","water|624","grave|625","shadow|626","arrival|627","feel|628","moving|629","thirteen|630","seventeen|631","wanted|632","debonair|633","terrorist|634","smoke|635","half|636","try|637","little|638","grab|639","wishing|640","baby|641","pebble|642","caused|643","landslide|644","fault|645","wasn't|646","even|647","cause|648","criminal|649","discipline|650","americans|651","doin|652","means|653","fucking|654","road|655","keeps|656","living|657","heart|658","stone|659","function|660","safety|661","secure|662","wall|663","door|664","floor|665","named|666","angel|667","bringer|668","ugly|669","doggy|670","style|671","hair|672","grow|673","wild|674","cover|675","limit|676","speak|677","within|678","you'll|679","luck|680","safer|681","side|682","softer|683","drift|684","quick|685","thought|686","wide|687","dead|688","enterprise|689","dearly|690","body|691","sing|692","ring|693","spirit|694","girl|695","recovering|696","breaks|697","through|698","leaves|699","green|700","brown|701","remember|702","anyhow|703","born|704","majority|705","town|706","otto|707","statues|708","trees|709","breath|710","bordering|711","shores|712","reservior|713","calamity|714","industreal|715","malady|716","falure|717","otherwise|718","felt|719","consequence|720","wellness|721","fairness|722","company|723","under|724","great|725","steal|726","provides|727","daily|728","rain|729","throughout|730","joyful|731","forrest|732","solution|733","insult|734","name|735","toxified|736","drained|737","cry|738","photograph|739","assuming|740","furniture|741","doing|742","plants|743","assembling|744","misdescriptors|745","big|746","whole|747","starts|748","denying|749","social|750","responsibility|751","persecuted|752","society|753","casting|754","echo|755","answer|756","disaster|757","army|758","appear|759","substitute|760","bright|761","shiny|762","tread|763","forget|764","about|765","past|766","now|767","throw|768","thing|769","extraneously|770","linked|771","beat|772","character|773","crush|774","spacious|775","call|776","toothless|777","ruthless|778","feed|779","shall|780","abort|781","trusted|782","believing|783","beauty|784","los|785","angeles|786","predilection|787","t\\me|788","pronunciation|789","ate|790","plug|791","'er|792","glow|793","divine|794","action|795","awaiting|796","comprehension|797","respect|798","myself|799","being|800","specialty|801","beliefs|802","fond|803","memories|804","monkey|805","number|806","five|807","still|808","alive|809","surviving|810","benefit|811","tobe|812","profit|813","profit's|814","visionary|815","mystery|816","revisionist|817","history|818","relegated|819","hordes|820","manipulated|821","fears|822","accumulated|823","wait|824","cold,|825","boy|826","friend|827","kill|828","story|829","soundtrack|830","doesn't|831","hate|832","roundround|833","land|834","wouldn't|835","couldn't|836","hard|837","seem|838","start|839","coughing|840","sort|841","softened|842","plain|843","lived|844","poverty|845","devised|846","escape|847","came|848","wearing|849","while|850","experience|851","server|852","god|853","liberation|854","i'd|855","redesign|856","gravely|857","gravity|858","force|859","consciousness|860","rejected|861","image|862","found|863","coarse|864","understand|865","competing|866","information|867","causes|868","physical|869","changes|870","might|871","stored|872","longer|873","journey|874","emerging|875","nation|876","controlled|877","environment|878","primary|879","motivation|880","reproduction|881","probable|882","predictable|883","evolution|884","arbitrary|885","preemptory|886","possible|887","prevolution|888","devolution|889","stupid|890","join|891","sons|892","wife|893","divorce|894","raider|895","beater|896","ask|897","directions|898","streets|899","full|900","killers|901","separate|902","places|903","breed|904","he'd|905","she'll|906","tighter|907","headed|908","stepchild|909","relate|910","role|911","nobody's|912","well|913","humans|914","aliens|915","combustion|916","conviction|917","former|918","killed|919","latter|920","subverted|921","religion|922","reached|923","moon|924","spiders|925","built|926","whys|927","pace|928","state|929","feigned|930","apology|931","guilt|932","sleeping|933","next|934","glory|935","empathy|936","temporarily|937","dread|938","something|939","afterbirth|940","foot|941","maze|942","million|943","tension|944","sleep|945","drop|946","neon|947","coffin|948","afford|949","timely|950","redemption|951","hopes|952","buy|953","boys,|954","index|955","thinner|956","thicker|957","facts|958","daniels|959","maddata|960","timid|961","towers|962","dollar|963","saver|964","power|965","assumtion|966","progression|967","organism|968","portable|969","softening|970","blows|971","walking|972","gently|973","stretch|974","individual|975","events|976","average|977","probabilty|978","fan|979","detrimental|980","existence|981","ill|982","matched|983","cooler|984","steps|985","ahead|986","starting|987","shot|988","lifes|989","premonition|990","retribution|991","voice|992","wind|993","natural|994","satellite|995","infinitely|996","edge|997","eternally|998","drawn|999","practicing|1000","gravitational|1001","attraction|1002","similar|1003","attract|1004","space|1005","fragment|1006","confuse|1007","closest|1008","sample|1009","objects|1010","larger|1011","context|1012","diffuse|1013","into|1014","east|1015","la|1016","becomes|1017","west|1018","spaces|1019","jesse|1020","self|1021","contained|1022","economy|1023","idea|1024","each|1025","person|1026","responsible|1027","own|1028","communication|1029","falter|1030","probability|1031","consecutive|1032","increases|1033","gathering|1034","skills|1035","neglected|1036","however|1037","case|1038","environmental|1039","disruption|1040","type|1041","essentially|1042","unchanged|1043","fewer|1044","people|1045","properties|1046","confusion|1047","highest|1048","concentration|1049","stability|1050","interest|1051","maintaining|1052","first|1053","beginning|1054","humanity|1055","difference|1056","trained|1057","affinity|1058","derision|1059","getting|1060","debt|1061","balanced|1062","improving|1063","this,|1064","everything,|1065","last,|1066","romance|1067","measure|1068","velocities|1069","predict|1070","mass|1071","trends|1072","sure|1073","mirror|1074","votes|1075","freaky|1076","bouncy|1077","ball|1078","tossed|1079","top|1080","shopping|1081","mall|1082","indigenous|1083","display|1084","indigents|1085","'ol|1086","wagons|1087","round|1088","shoot|1089","angels|1090","between|1091","event|1092","match|1093","frequency|1094","walks|1095","canopy|1096","overhead|1097","leak|1098","tide,|1099","left|1100","behind,|1101","sand|1102","sparkles|1103","worried|1104","grows|1105","white|1106","catches|1107","wherever|1108","did|1109","jar|1110","drive|1111","sky|1112","happens|1113","clouds|1114","shakes|1115","fantasies|1116","tired|1117","drowning|1118","alone|1119","hill|1120","valley|1121","high|1122","higher|1123","net|1124","think|1125","buffalo|1126","robo|1127","drain|1128","stuck|1129","steel|1130","slag|1131","age|1132","tracks|1133","flow|1134","goto|1135","scars|1136","smaller|1137","cars|1138","roof|1139","hide|1140","stars|1141","zone|1142","shift|1143","blood|1144","alcohol|1145","become|1146","china|1147","cup|1148","fill|1149","razor|1150","blade|1151","useful|1152","dance|1153","shake|1154","slump|1155","tide|1156","behind|1157","sparkle|1158","change|1159","real|1160","yard|1161","far|1162","winds|1163","tips|1164","enemy|1165","envy|1166","spoke|1167","dangerously|1168","wish|1169","searching|1170","anonymity|1171","constantly|1172","org|1173"," |1174"," |1175"," |1176"," |1177"," |1178"," |1179"," |1180"," |1181","deep|1182"," |1183"," |1184"," |1185","ν|1186","=|1187","(|1188","±|1189","ε^1|1190","ψ^1|1191",")|1192","ε^2|1193","ψ^2|1194","ε^3|1195","ψ^3|1196"," |1197","bol|1198","pd|1199","bd|1200","ct|1201","u|1202","n|1203","m|1204","m3m|1205","叵|1206","龘|1207"," |1208","com|1209"," |1210"," |1211"," |1212","brightpalm|1213"," |1214","earwiggler|1215","entropycity|1216","entropynand|1217","entropynetwork|1218","entropynor|1219","godempress|1220","genotoy|1221","gravitylover|1222","gravitylovesme|1223","higenic|1224","education|1225","institute|1226","ngo|1227","science|1228"," |1229","ai|1230","kuai|1231","su|1232","lwdlab|1233","motiondial|1234","xyz|1235","observationet|1236","portablefilm|1237","portableroad|1238","ragli|1239"," |1240"," |1241"," |1242"," |1243"," |1244","|1245","|1246"," |1247","lock|1248","clock|1249","ticks|1250"," |1251","book|1252","lines|1253","pan-am|1254","add+vice|1255","dangerous|1256","deal|1257","danger,|1258","negotiate|1259","passage|1260","baggage|1261","calm|1262","bags|1263","going|1264","turnstile|1265","suitcase,|1266","suitcase|1267","bang|1268","able|1269","subway|1270","airport|1271","carry|1272","impolite|1273","traverse|1274","crowd|1275","bag|1276","results|1277","many|1278","collisions|1279","chaotic|1280","difficult|1281","stripping|1282","usable|1283","space,|1284","destruction|1285","order|1286","damaged|1287","complete|1288","center|1289","until|1290","perimeter|1291","suitcases|1292","faster|1293","vanity|1294","measured|1295","mirrored,|1296","momentary|1297","gives|1298","breakfast|1299","every|1300","day|1301","intended|1302","very|1303","cracks|1304","walls|1305","creep|1306","learned,|1307","didn't|1308","realize|1309","genuine|1310","laughter|1311","anyway|1312","spares|1313","suppose|1314","question|1315","asked|1316","dry|1317","eggs|1318","cooks|1319","butter|1320","pan|1321","soap|1322","cheaper|1323","butter,|1324","scrape|1325","wash,|1326","saves|1327","cost|1328","buttering|1329","summer|1330","accident|1331","produce|1332","connections|1333","dog|1334","joy|1335","write|1336","fact|1337","mouth,|1338","taste|1339","chewing|1340","i,|1341","seems|1342","facts,|1343","yet|1344","else's|1345","ain't|1346","flaky|1347","pissed|1348","everyone|1349","paid|1350","dues|1351","eater;|1352","score|1353","spends|1354","checking|1355","weren't|1356","out,|1357","we're|1358","uncle|1359","dating|1360","corner|1361","store|1362","crack|1363","bread|1364","bleached|1365","bleed|1366","i'm|1367","shaking|1368","right|1369","cents|1370","loaf|1371","welfare|1372","troops|1373","mc'ie|1374","d's|1375","slice|1376","dice|1377","maurie|1378","her,|1379","survived|1380","flows|1381","entirely|1382","recovery|1383","shock|1384","discovery|1385","party|1386","rhyme|1387","lasting|1388","dataset|1389","decline|1390","days|1391","softly|1392","recline|1393","ago|1394","remembered|1395","important|1396","which|1397","recover|1398","sense|1399","forgetting|1400","create|1401","seek|1402","mystical|1403","medium|1404","figure|1405","sensible|1406","interpretation|1407","waste|1408","simpleness|1409","pleases|1410","reoccurring|1411","text|1412","caught|1413","itself|1414","news|1415","balls|1416","possibility|1417","surface|1418","proficient|1419","we'll|1420","mastery|1421","stem|1422","figured|1423","product|1424","goal|1425","large|1426","effect|1427","wheel|1428","medieval|1429","torture|1430","device|1431","sought|1432","enemies|1433","solemn|1434","respite|1435","earned,|1436","rather|1437","stolen|1438","hog-washed|1439","pill|1440","remedy|1441","kermit|1442","antidote|1443","expression|1444","bring|1445","fellows|1446","bedsharers|1447","least|1448","worse|1449","monica|1450","looking|1451","payfone|1452","suck|1453","nickels|1454","bed|1455","vegas|1456","death|1457","vegans|1458","removed|1459","integratratrateratration|1460","avoiding|1461","deathly|1462","keystrokes|1463","everything's|1464","glass|1465","wine|1466","sugar|1467","cake|1468","melt|1469","toaster|1470","lightning|1471","storms|1472","excess|1473","capital|1474","america,|1475","redirected|1476","river|1477","maybe,|1478","surely,|1479","result|1480","lacking|1481","jetted|1482","antihistamines|1483","derivatives|1484","hunter|1485","isn't|1486","gun|1487","expansion|1488","losses|1489","negated|1490","bad|1491","prennypress|1492","loss|1493","related|1494","transfer|1495","careful|1496","step|1497","list|1498","appearance|1499","reason|1500","nice|1501","ok|1502","chances|1503","misinterpreted|1504","replaced|1505","mimicked|1506","amount|1507","value|1508","immediately|1509","obvious|1510","interested|1511","adults|1512","adult|1513","having|1514","taken|1515","advantage|1516","fucker|1517","damned|1518","miners|1519","screwed|1520","daughters|1521","finished|1522","pecker|1523","wrecker|1524","antitheses|1525","dexter|1526","'ones|1527","constitution|1528","swiss-cheese|1529","legs|1530","gloved|1531","rifle|1532","trunk|1533","crawls|1534","sits|1535","other:|1536","wash|1537","rising|1538","toss|1539","weather|1540","entertain|1541","sift|1542","edges|1543","silt|1544","stockings|1545","song|1546","'cause|1547","whenever|1548","airplane|1549","consummate|1550","flowing|1551","footsteps|1552","beer|1553","ones|1554","strictly|1555","verbal|1556","anything|1557","consenting|1558","abdicate|1559","vacuum|1560","selling|1561","cowards|1562","dish|1563","trusts|1564","pieces|1565","misdirected|1566","paper|1567","shredder|1568","expected|1569","guest|1570","enliven|1571","scenery|1572","vices|1573","mercenary|1574","(i|1575","audience|1576","rely|1577","provisions|1578","host|1579","belongings|1580","pocket|1581","relative|1582","accomplish|1583","guest,|1584","traveler|1585","connotation|1586","unwanted|1587","tavel'r|1588","certainly|1589","leaving|1590","minimum|1591","computer|1592","connection|1593","ticket|1594","somewhere|1595","credit|1596","card|1597","bankcard|1598","went|1599","france|1600","saggy|1601","asses|1602","isolated|1603","isolation|1604","intentions|1605","jesse's|1606","arrangement|1607","nightfall|1608","coming|1609","communicator|1610","dress|1611","message|1612","messages|1613","true|1614","enamoured|1615","media|1616","truer|1617","path|1618","smells|1619","fish|1620","early|1621","possibilities|1622","release|1623","involved|1624","warden,|1625","absence|1626","proper|1627","spite|1628","barely|1629","begun|1630","much|1631","percent|1632","affiliates|1633","dissemination|1634","peaked|1635","ratings|1636","watches|1637","betterment|1638","worth|1639","zero|1640","amiability|1641","oldster|1642","belief|1643","roads|1644","minds|1645","wore|1646","wreaked|1647","it'|1648","afterthoughts|1649","flambè|1650","serve|1651","greece|1652","teriyaki|1653","sauce|1654","straighten|1655","painting|1656","crooked|1657","swiss|1658","cheese|1659","boring|1660","camelhair|1661","post|1662","toasted|1663","driving|1664","crazy|1665","excuse|1666","creating|1667","glued|1668","eyeballs|1669","shut|1670","either|1671","idle|1672","threats|1673","universe|1674","unwind|1675","works|1676","*-1|1677","abbreviations|1678","sensation|1679","arranged|1680","document|1681","dear|1682","homespun|1683","hero|1684","kind|1685","picking|1686","kindergarten|1687","after|1688","wiped|1689","unsure|1690","finger|1691","girls|1692","bee|1693","smashing|1694","success|1695","worry|1696","solutions|1697","brightest|1698","allowed|1699","climb|1700","tree|1701","clubhouse|1702","sitting|1703","gentlemen|1704","kissing|1705","good-bye's|1706","departed|1707","kindly|1708","collecting|1709","wrappers|1710","noise,|1711","pardons|1712","thank|1713","unhingement|1714","liars|1715","dispossession|1716","forgetful|1717","favorites|1718","enlightenment:|1719","fools|1720","basement|1721","arrogance|1722","abridgement|1723","postoasted|1724","monarchy|1725","assets|1726","suffice|1727","support|1728","manual|1729","read|1730","instructions|1731","off|1732","empire|1733","allow|1734","erasure,|1735","emulation|1736","infant|1737","player|1738","speaker|1739","arrangements|1740","spectacular|1741","generations|1742","sum|1743","six|1744","often|1745","entrapment|1746","drawing|1747","attentions|1748","organisms|1749","expect|1750","woodwork|1751","fission|1752","byproducts|1753","plastic|1754","applicators|1755","apply|1756","censorship|1757","membership|1758","derive|1759","interface|1760","runners|1761","unemployed|1762","running|1763","figures|1764","propagate|1765","departs|1766","unadulterated|1767","rubber|1768","righton|1769","send|1770","connected|1771","neural|1772","networks|1773","profitable|1774","mining|1775","entertained|1776","original|1777","inventive|1778","streak|1779","shanghai|1780","butt|1781","wonderful|1782","assignment|1783","secondary|1784","offspring|1785","propped|1786","ghostly|1787","memorie|1788","reflection|1789","pastry|1790","cherry-topped|1791","structure,|1792","soft|1793","middle|1794","causing|1795","distress|1796","self-annulling|1797","harmless|1798","three|1799","amazing|1800","miracles|1801","laid|1802","probably|1803","fainted|1804","none|1805","spare|1806","rhyming|1807","nonexhist|1808","migrate|1809","diaspora|1810","apocalypse|1811","toast|1812","data|1813","yesterday|1814","millions|1815","sarcastic|1816","getaway|1817","organized|1818","humanitarian|1819","harry|1820","bastard|1821","prince|1822","entropy,|1823","n*sells|1824","sexxy|1825","sexual|1826","experiences|1827","lowest|1828","common|1829","denominator|1830","bidder|1831","jumps|1832","intention|1833","(onto)|1834","conquering|1835","exaggeration|1836","loving|1837","minute|1838","glowing|1839","superior|1840","management|1841","alternative|1842","farther|1843","nearest|1844","t|1845","eat|1846","blank|1847","statement|1848","participles|1849","synthetic|1850","mechanic|1851","contagious|1852","intelligence|1853","newbies|1854","mutababies|1855","(partly|1856","unassuming|1857","gag|1858","order)|1859","beyond|1860","confines|1861","block|1862","set|1863","intercepts|1864","screen|1865","spillage|1866","implement|1867","standard|1868","panick|1869","routine|1870","fresh|1871","gunz|1872","yeeeaaaa|1873","gott|1874","go:|1875","here's|1876","resolution:|1877","let's|1878","lack|1879","mobility|1880","***|1881","(yes|1882","heavily|1883","accented|1884","discounted|1885","suspect|1886","flagged|1887","fronting)'|1888","______respect____|1889","suggest|1890","language|1891","public|1892","loudly|1893","sounds|1894","wonder|1895","talking|1896","encrypted|1897","collusion|1898","reclamation|1899","frustration|1900","shalom|1901","chalky|1902","base|1903","nobility|1904","represent|1905","imperial|1906","authority|1907","hungry|1908",",|1909","mickey|1910","rat|1911","quantified|1912","quantized|1913","qualified|1914","openly|1915","identified|1916","accepted|1917","mostly|1918","denied|1919","partially|1920","hydrogenated|1921","low|1922","fat|1923","homogenated|1924","alienated|1925","gold|1926","tin|1927","plated|1928","rated|1929","hatred|1930","bother|1931","cat,|1932","held|1933","quietly,|1934","demand|1935","intellect|1936","curl|1937","snarl|1938","lie|1939","same,|1940","breakdown|1941","independent|1942","contractor|1943","pay|1944","clean,|1945","catching|1946","smallest|1947","subtle|1948","sublime,|1949","machine:|1950","afraid|1951","different|1952","clean|1953","realized|1954","today|1955","being,|1956","frightened|1957","thoughts|1958","stood|1959","joined|1960","catastrophe|1961","imagine|1962","pallet|1963","scar|1964","heroic|1965","aimlessly|1966","drifts|1967","scenes,|1968","people's|1969","trigger|1970","honesty|1971","sad|1972","sunday|1973","sat|1974","staring|1975","soaked|1976","ceased|1977","really|1978","though|1979","whether|1980","later|1981","matters|1982","american|1983","television|1984","torpedo|1985","danceing|1986","career|1987","jungle|1988","mile|1989","mobster|1990","house|1991","hamburger|1992","jeans|1993","tank|1994","cia|1995","magazine|1996","imigrant|1997","apartment|1998","technology|1999","japanese|2000","korean|2001","at&t|2002","president|2003","dissident|2004","homeless|2005","racheal|2006","dont|2007","heaven|2008","aren't|2009","heaaven|2010","thats|2011","im|2012","rachel|2013","bought|2014","warmsummer|2015","afternoon|2016","fades|2017","twilight|2018","lights|2019","cigarettes|2020","gin|2021","whisky|2022","stole|2023","cant|2024","stop|2025","fell|2026","puddle|2027","takes|2028","feigns|2029","topology|2030","cultofindividuality|2031","legionandrew|2032","farmerhood|2033","malice|2034","judged|2035","genetics|2036","thier|2037","assessment|2038","compounded|2039","infinite|2040","multiple|2041","functions|2042","capable|2043","of,|2044","limited|2045","purpose|2046","extract|2047","linear|2048","pattern|2049","efficiently|2050","defy|2051","emulate|2052","defies|2053","happen|2054","board|2055","color|2056","using|2057","allows|2058","recording|2059","binary|2060","manner;|2061","a1|2062","switch|2063","intensity|2064","a2|2065","erased|2066","effected|2067","two;|2068","nullifying|2069","1/2|2070","changing|2071","location|2072","greater|2073","accuracy|2074","unknown|2075","affects|2076","known|2077","affect|2078","brain|2079","cancer|2080","builds|2081","uses|2082","storage|2083","maintain|2084","individuality|2085","miss|2086","project|2087","attempt|2088","illustrate|2089","differences|2090","male|2091","female|2092","brains|2093","proud|2094","feel,|2095","shares|2096","terror|2097","growing|2098","night|2099","french|2100","bathrooms|2101","bath|2102","labeled|2103","wondering|2104","communicate|2105","owner|2106","separately|2107","chairs|2108","share|2109","chair|2110","pouch|2111","franks|2112","main|2113","started|2114","jabbering|2115","jabber|2116","days,|2117","rafting|2118","decided|2119","collaborate|2120","hoped|2121","whoever|2122","supposed|2123","meet|2124","ireland|2125","irish|2126","easy|2127","concerned|2128","happened|2129","significant|2130","relationships|2131","favorite|2132","describe|2133","comfortable|2134","begin|2135","conversation|2136","identify|2137","identity|2138","joining|2139","groups|2140","adapt|2141","express|2142","frustrate|2143","angry|2144","memorize|2145","rotate|2146","degrees|2147","upside|2148","backwards|2149","beep|2150","second|2151","beeps|2152","seconds|2153","pennies,|2154","find|2155","nickel,|2156","whereby|2157","modify|2158","track|2159","hungry,|2160","situations|2161","emotions|2162","stopped|2163","eating|2164","broken|2165","experimentation|2166","others|2167","reaction|2168","experimenting|2169","continue|2170","prolonged|2171","period|2172","killed)|2173","desire|2174","experimented|2175","loads|2176","snow|2177","mountain|2178","pass|2179","colorado|2180","there:|2181","forces|2182","stronger|2183","influence|2184","choice|2185","course,|2186","liar|2187","blasphemer|2188","drank|2189","whiskies|2190","scotch|2191","books|2192","well,|2193","horse|2194","vomit|2195","dogs|2196","giraffes|2197","heard|2198","irregularities|2199","neck|2200","area|2201","knew|2202","guy,|2203","kar,|2204","boxes|2205","called|2206","cathedra|2207","several|2208","videotape|2209","we've|2210","tracking|2211","since|2212","escapes|2213","sometimes,|2214","exactly|2215","ran|2216","screaming|2217","b-i-b-l-e|2218","spells|2219","biiiiiiiiiibbbbbbbeeeeeeeeeellllllllllllllll|2220","cried|2221","truck|2222","matterless|2223","mommy|2224","misery|2225","evolve|2226","inextricably|2227","variety|2228","specialized|2229","tribes|2230","men|2231","rebellion|2232","needed|2233","adversity|2234","manufactures|2235","employ|2236","constructed|2237","accommodate|2238","builders|2239","widened|2240","pressure|2241","lengthened|2242","building|2243","efficiency|2244","complex|2245","reactions|2246","well-established|2247","increment|2248","based|2249","speech|2250","extending|2251","writing|2252","further|2253","extension|2254","manipulation|2255","internet|2256","ease|2257","use|2258","societal|2259","knowledge|2260","schizophrenic|2261","network|2262","diseases|2263","progress|2264","tse|2265","resolves|2266","tse's|2267","stress|2268","external|2269","demands|2270","manage|2271","requests|2272","arises|2273","profoundly|2274","separated|2275","property|2276","factor|2277","environment,|2278","complexity|2279","network,|2280","amorphous|2281","borders|2282","graduated|2283","input|2284","rates|2285","conscious|2286","highly|2287","defined|2288","well-defined|2289","behave|2290","compared|2291","ourselves|2292","fitting|2293","era|2294","dimensions|2295","ill-fated|2296","alphabet|2297","bathroom|2298","climbing|2299","hen|2300","bamake|2301","cat|2302","donkey|2303","responded|2304","mouths|2305","conscious,|2306","unless|2307","fragmented|2308","(perhaps|2309","devil|2310","conscious)|2311","thinking|2312","spending|2313","else|2314","disappear;|2315","goes|2316","expand|2317","immune|2318","response|2319","rapidly|2320","becoming|2321","unnecessary|2322","showed|2323","perfectly|2324","expense|2325","telling|2326","purchased|2327","effortless|2328","waver|2329","remakes|2330","forever|2331","last's|2332","retire|2333","mentally|2334","physically|2335","refresh|2336","acceptable|2337","novel|2338","actually|2339","enjoyable|2340","hunger|2341","content|2342","impression|2343","impacts|2344","actions|2345","times,|2346","successful|2347","lasts|2348","dies|2349","quicker|2350","shifting|2351","moved|2352","useless|2353","trappings|2354","stable,|2355","demonstrated|2356","energy|2357","blessed|2358","hardness|2359","resiliency,|2360","curiosity|2361","imperative|2362","obsolete|2363","however,|2364","expresses|2365","processed|2366","construction|2367","apparent|2368","aspects|2369","abbreviate|2370","details|2371","altogether|2372","traveling|2373","desolation|2374","trick|2375","weighs|2376","ton|2377","decimated|2378","faculty|2379","distrust|2380","organization|2381","winning|2382","such|2383","dismayed|2384","receiving|2385","drugs:|2386","aware|2387","method|2388","hardship|2389","leading|2390","necessary|2391","sacrifice|2392","finite|2393","patience|2394","sustainability|2395","objectify|2396","needs|2397","provided|2398","undesirable|2399","desirable|2400","skill|2401","mechanism|2402","truly|2403","lethal|2404","working|2405","workable|2406","distracting|2407","funded|2408","institutional|2409","freefall|2410","disguised|2411","homminess|2412","captured|2413","suburban|2414","rag|2415","bodies|2416","sweet|2417","alliances|2418","nebulous|2419","furiously|2420","conflict|2421","$230|2422","00|2423","surely|2424","layers|2425","late|2426","filled|2427","lions|2428","tigers|2429","bears|2430","oh|2431","always,|2432","lions,|2433","tigers,|2434","fought|2435","won|2436","youth,|2437","brilliance|2438","ideal|2439","entertainer|2440","willed|2441","wondered|2442","desired|2443","painter|2444","avoid|2445","himself|2446","insert|2447","sign|2448","here:|2449","to|2450","things|2451","paint|2452","became|2453","industrialist|2454","magician|2455","teacher|2456","know,|2457","joyfull|2458","undergoing|2459","integration|2460","win,|2461","win|2462","successful,|2463","learn|2464","beneficiary,|2465","controller|2466","count|2467","dawning|2468","longing|2469","making|2470","defense|2471","inadequacy|2472","inefficiency|2473","inability|2474","collapse|2475","revenge|2476","solace|2477","reprieve|2478","given|2479","pursuit|2480","trying|2481","caring|2482","shed|2483","ineffectual|2484","resolution|2485","necessities|2486","makeup|2487","ending|2488","perchance|2489","pressed|2490","games|2491","curls|2492","thanks|2493","twenty|2494","presskits|2495","v|2496","equally|2497","iowa|2498","cleveland|2499","nowhere|2500","somewhere,|2501","driven|2502","inaction|2503","small|2504","headspace|2505","aunt|2506","brought|2507","california|2508","contact|2509","mtv,|2510","gave|2511","forgot|2512","general|2513","way;|2514","whiskey|2515","hasn't|2516","washroom|2517","plan|2518","smooching|2519","letter|2520","depend|2521","maids|2522","transferring|2523","country|2524","trading|2525","names|2526","suppliers|2527","thexchange|2528","effort|2529","diminish|2530","experimental|2531","diminishing|2532","returns|2533","spot|2534","logic|2535","month|2536","extrapolated|2537","implementation|2538","tit|2539","tat|2540","hurts|2541","press|2542","kit|2543","card-|2544","cod|2545","compiled|2546","rosters|2547","film|2548","students|2549","beggars|2550","cheats,|2551","authors|2552","tutors|2553","terrorists,|2554","draw|2555","faces|2556","switched|2557","birth|2558","princess|2559","fellow|2560","fix|2561","sending|2562","minsk|2563","chap|2564","snit|2565","royalty|2566","handled|2567","discretion|2568","worry,|2569","drab|2570","lately|2571","downer|2572","dearie,|2573","adventure|2574","lifetime|2575","wits|2576","saving|2577","babe,|2578","job,|2579","account,|2580","rules|2581","marshmallows|2582","wear|2583","clothes|2584","underwear|2585","critter|2586","costume|2587","dirty|2588","thrill|2589","astronaut|2590","invented|2591","plexiglas|2592","bald|2593","mans|2594","ass|2595","starlit|2596","hole|2597","met|2598","attached|2599","entourage|2600","across|2601","scurrying|2602","eclectic|2603","rage|2604","subdivide|2605","efforts|2606","uncommon|2607","younger|2608","member|2609","staff|2610","twitch|2611","subsequently|2612","fit|2613","greeted|2614","enthusiasm|2615","peers|2616","bone|2617","chillier|2618","bedtime|2619","disappeared|2620","river,|2621","fire|2622","pansy|2623","procreation|2624","shit|2625","top-heavy|2626","mandate|2627","drunk|2628","liquor|2629","crashed|2630","boat|2631","eaten|2632","faint,|2633","usually|2634","lightheadedness|2635","normally|2636","couple|2637","dizzy|2638","lightheaded|2639","few|2640","almost|2641","normal|2642","stupidity,|2643","timidity,|2644","ingrating|2645","debut|2646","school,|2647","dressed|2648","oscilot|2649","finest|2650","fabric|2651","belize|2652","sewing|2653","quit|2654","point|2655","antics|2656","(they|2657","charming|2658","mild|2659","delightful|2660","design|2661","bedroom|2662","africa|2663","australia,|2664","south|2665","particularly|2666","``you|2667","jungle''|2668","persuasion|2669","chauffeur|2670","convince|2671","``gone|2672","days''|2673","books,|2674","stinky|2675","owners|2676","apparently|2677","toilet|2678","paper,|2679","etching|2680","inspire|2681","trouble|2682","hearing|2683","clanging|2684","head:|2685","animals|2686","echoes|2687","entwining|2688","complicate|2689","master|2690","importance|2691","twenty-two|2692","sticks|2693","dynamite|2694","freak|2695","may|2696","meat|2697","me's|2698","powder|2699","tolerate|2700","wreak|2701","saying|2702","meter|2703","reciprocity|2704","literal|2705","sandblasting|2706","produced|2707","misappropriated|2708","straight|2709","surestock|2710","mexican|2711","revolution|2712","bloody|2713","faggy|2714","assed|2715","fanged|2716","homogenously|2717","slovenly|2718","misaligned;|2719","remarkably|2720","unable|2721","bidding|2722","hundreds|2723","thousands|2724","pretzels|2725","2$|2726","correctly|2727","obv|2728","appropriate|2729","2%|2730","security|2731","paragraph|2732","ladies:|2733","yea,|2734","one:|2735","yea|2736","eeeeeez|2737","fast|2738","split|2739","drug|2740","binge|2741","primarily|2742","advertisement|2743","impetus|2744","toolbox|2745","it'll|2746","rocks|2747","steady|2748","dividing|2749","spent|2750","seeking|2751","learning|2752","lord|2753","self-effacement|2754","behaviors|2755","pathways|2756","simulate|2757","engine|2758","indoctrinated|2759","robot|2760","rewrite|2761","railway|2762","train|2763","nothingness|2764","motionless|2765","conquest|2766","verse|2767","fluorescent|2768","tubing|2769","inspecting|2770","bravado|2771","criminality|2772","hard:|2773","believer|2774","subliminal|2775","aftereffect|2776","passing|2777","revival|2778","antiquity|2779","marching|2780","hearts|2781","ambition|2782","neglect|2783","relivers|2784","chain|2785","manner|2786","capillary|2787","scopes|2788","criminals|2789","pool|2790","decimating|2791","tribe|2792","consequences|2793","law|2794","claw|2795","involuntary|2796","redirect|2797","stream|2798","tributary|2799","arbitrate|2800","abandoned|2801","vengeance|2802","monetary|2803","dysfunction|2804","errant|2805","vector|2806","giver|2807","error|2808","displacement|2809","convert|2810","proprietor|2811","sharer|2812","showers|2813","disabilities|2814","subvert|2815","long-range|2816","plans|2817","pressing|2818","term|2819","defiance|2820","tragedy|2821","mocking|2822","marginal|2823","grouped|2824","indistinguishable|2825","derelict,|2826","derelict|2827","presumed|2828","inhabit|2829","province|2830","decay|2831","irresponsible,|2832","morbid|2833","defeatist|2834","dismay|2835","necro-maniacal|2836","individualism|2837","tested|2838","bugs|2839","prohibition's|2840","boys|2841","dear,|2842","lady|2843","friends|2844","invited|2845","tie|2846","abridging|2847","symbolism|2848","incalcitrant|2849","indignitaries|2850","self-denial|2851","liberty|2852","circumnavigate|2853","fiercely|2854","feels|2855","aneurysm|2856","stick|2857","stones|2858","porridge|2859","messy|2860","soup|2861","prepared|2862","unbearable|2863","endured|2864","output|2865","nay|2866","nand|2867","gate|2868","insane|2869","settle|2870","booty|2871","wrong|2872","'don't|2873","giving|2874","marry|2875","mess|2876","swimming|2877","york|2878","hockey|2879","club|2880","fidget,|2881","bastardize|2882","sentences|2883","curious|2884","connected,|2885","briar|2886","rabbit|2887","bear|2888","unconscionable|2889","skips|2890","hours|2891","dawn|2892","words|2893","grace|2894","shortage,|2895","picture|2896","stream,|2897","logs-|2898","adversities|2899","trickle|2900","emerges|2901","wood|2902","swells|2903","overflows|2904","banks|2905","washes|2906","fallen|2907","logs|2908","washed|2909","torn|2910","soil|2911","weakest|2912","areas|2913","meadow|2914","flooded|2915","currently,|2916","required|2917","evolutionary|2918","accumulate|2919","hanger-on|2920","themselves|2921","worker|2922","fighter|2923","chants|2924","repetition|2925","though,|2926","recitation|2927","above|2928","din|2929","surrounds|2930","counters|2931","allude|2932","purity|2933","motion|2934","resolute|2935","chanting|2936","reassurance|2937","disruptive|2938","reassure|2939","travel|2940","stabilized|2941","positions|2942","stable|2943","predictability|2944","bacteria|2945","exponential|2946","galaxy|2947","density|2948","center,|2949","periphery|2950","body,|2951","arrives|2952","distance|2953","travels|2954","low-level|2955","level|2956","walking,|2957","next-level-up|2958","far,|2959","easy,|2960","distances|2961","traveled|2962","owns|2963","system,|2964","inner|2965","takers|2966","outer|2967","workers|2968","reaching|2969","points|2970","are,|2971","assure|2972","continued|2973","favorable|2974","exercising|2975","hoards|2976","'em|2977","tiring|2978","whip|2979","frenzy|2980","harnessed|2981","chocolate|2982","correct|2983","misleading|2984","fixed|2985","righted|2986","quickly|2987","intrude|2988","lives,|2989","waterbed|2990","likely|2991","inclined|2992","hungry-poor|2993","drugbusted|2994","funny|2995","demo|2996","salesman|2997","accidentally|2998","replace|2999","prepare|3000","you:|3001","manufacturing|3002","transportation|3003","subject|3004","theater|3005","jumping|3006","equity|3007","sees|3008","monument|3009","been,|3010","tale|3011","grim|3012","analyze|3013","madness|3014","intelligent|3015","willing|3016","pretend|3017","shouldn't|3018","guess|3019","anywhere|3020","reservoirs|3021","basements|3022","attics|3023","pipes|3024","nooks|3025","crannies|3026","exploring|3027","missing|3028","pretty|3029","spooky|3030","then,|3031","drew|3032","chalkboard|3033","wet|3034","heavy|3035","smelled|3036","rotting|3037","cherries,|3038","garbage|3039","pleaded|3040","childlike|3041","trade|3042","jail|3043","sentence,|3044","stint|3045","marines,|3046","marriage,|3047","asserted|3048","uncertainly|3049","weakness|3050","diagramming|3051","walked|3052","chalk|3053","midway|3054","explaining|3055","trilogy|3056","revolves|3057","hermaphroditic|3058","population,|3059","lunged|3060","directly|3061","me,|3062","astray,|3063","boards|3064","toppled|3065","desks|3066","parted|3067","clatters|3068","resigned|3069","lunge|3070","anyone|3071","kept|3072","began|3073","outline|3074","hectic|3075","semiconscious|3076","flesh|3077","eaters|3078","excused|3079","suddenly|3080","wandered|3081","waited|3082","niagara|3083","falls,|3084","four|3085","old,|3086","railing|3087","gorge|3088","policeman,|3089","slacks|3090","leather|3091","jackets|3092","billy|3093","disguise|3094","seven,|3095","chip|3096","spunk|3097","and,|3098","blinding|3099","bounced|3100","cop|3101","boarding|3102","snotty|3103","brats|3104","unorthodox|3105","approach|3106","leeway|3107","preferred|3108","cherios|3109","spoon,|3110","instead|3111","bicycle|3112","baby-sitters|3113","toys|3114","enterprising|3115","fork|3116","clicker|3117","distraught|3118","adoption|3119","proceedings|3120","properly|3121","parental|3122","unit|3123","snooping|3124","quality|3125","dad,|3126","shop|3127","around,|3128","arcade|3129","downtown|3130","steplightly|3131","popular|3132","upwardly|3133","mobile|3134","pseudo-industrealists|3135","gray|3136","hat|3137","wool|3138","oxford|3139","tweezer,|3140","billy's|3141","perspective|3142","dad|3143","orphan|3144","handsome|3145","adam's|3146","apple,|3147","cotton|3148","wear-lightly|3149","evening|3150","gown|3151","emphasizing|3152","cleavage|3153","falling,|3154","delicately|3155","impressed|3156","discreetly|3157","cantina|3158","boy,|3159","worked|3160","courting,|3161","stumbled|3162","seated|3163","millionaire|3164","morning,|3165","champaign|3166","orange|3167","juice|3168","stomachache|3169","young,|3170","exceptional|3171","day,|3172","house,|3173","yanked|3174","service|3175","pull|3176","hours,|3177","ponies|3178","accountant,|3179","personal|3180","staff,|3181","chambermaid,|3182","loved|3183","played|3184","more,|3185","darted|3186","ears|3187","bleeding|3188","driedo,|3189","man's|3190","name,|3191","thought,|3192","dreido|3193","escorted|3194","lunch,|3195","occasion,|3196","fetched|3197","school|3198","naughty|3199","arched|3200","headwaiter,|3201","retreating|3202","spine|3203","matrede|3204","aikido|3205","lessons|3206","arrived|3207","brotherly|3208","practice|3209","beginning,|3210","dreido,|3211","enjoying|3212","dramatic|3213","form|3214","exercise,|3215","attacks|3216","closet|3217","mortal|3218","delicious|3219","chortles|3220","pounced|3221","marched|3222","acclimatized|3223","danger|3224","tone|3225","ethereal|3226","tranquility|3227","all,|3228","lessons,|3229","fun|3230","pisces|3231","aquarius|3232","preclude|3233","marriage|3234","gestapo|3235","swept|3236","paratroopers|3237","chicago|3238","came,|3239","(yet|3240","threaten|3241","friendly|3242","cooperation|3243","flying|3244","congratulations|3245","cam|3246","operator|3247","combustion,|3248","moon,|3249","aftermath|3250","weell|3251","covered|3252","parts|3253","something's|3254","industrial|3255","epoch|3256","breathe|3257","consumes|3258","season|3259","border|3260","empires|3261","agony|3262","clear|3263","channel|3264","return|3265","teasing|3266","resonant|3267","thumbs|3268","smiled|3269","pero|3270","cuidado|3271","f|3272","sorrow,|3273","2,|3274","sides|3275","accompanied|3276","setsame|3277","ways|3278","fostered|3279","yourself,|3280","standardizing|3281","cows|3282","eerrie|3283","stomach|3284","embrace|3285","barbarians|3286","freerange|3287","highway|3288","techno|3289","lipstick|3290","vaseline,|3291","gasoline|3292","criminal;|3293","softens|3294","saw|3295","immediately,|3296","hip|3297","hop|3298","hooray|3299","ooooooo|3300","ayeaaaaaa|3301","raid|3302","friend,|3303","character,|3304","angel,|3305","crawling|3306","spooks|3307","agreement|3308","food,|3309","sake|3310","trust,|3311","ability|3312","nature,|3313","banks,|3314","sufficient|3315","strangles|3316","search|3317","pesto,|3318","earlier|3319","distracted|3320","model|3321","smoking|3322","yellowed|3323","teeth,|3324","thin|3325","lips,|3326","tromped|3327","oversize|3328","patent|3329","tiny|3330","neat|3331","shops|3332","advertised|3333","stoicism|3334","requisite|3335","signed|3336","receipt|3337","promised|3338","mr|3339","penny|3340","giraffe|3341","possessor|3342","someone's|3343","blue,|3344","'co-op|3345","august|3346","undersized|3347","beverly|3348","hills|3349","t-shirt,|3350","oversized|3351","shoes,|3352","swiss-army|3353","coat|3354","blocked|3355","course|3356","shorts|3357","shirt|3358","tails|3359","hanging|3360","jon|3361","familiar|3362","gone,|3363","freelance|3364","all;|3365","oddity|3366","seeing|3367","confused|3368","faltered|3369","behaved|3370","upon|3371","insignificant|3372","mexico|3373","added|3374","verbs|3375","(subtle|3376","mirth)|3377","(me)|3378","closed|3379","considered|3380","asking|3381","root|3382","attic|3383","charlie|3384","van|3385","pesto|3386","together,|3387","pleasant|3388","affair|3389","attracted|3390","encounter|3391","resistance|3392","deform|3393","rap|3394","plus|3395","initiation|3396","housing|3397","experiment|3398","estate|3399","values|3400","devices|3401","unwed|3402","mothers|3403","houses|3404","hell,|3405","shootings|3406","statistical|3407","nightmare,|3408","babies|3409","forward|3410","to,|3411","stewards|3412","extraction|3413","moneys|3414","poorer|3415","segment|3416","letter,|3417","orders|3418","indicated|3419","citizenry|3420","brigade|3421","march|3422","raising|3423","topical|3424","armies|3425","conditioned|3426","neighborhood|3427","guerrilla|3428","retreats|3429","year|3430","either,|3431","terrifying|3432","ideals|3433","explicit|3434","bomb|3435","infected|3436","methods|3437","brief|3438","prisoner|3439","squeal|3440","gelcoat,|3441","tummy|3442","tingle|3443","yo|3444","homogenization|3445","hey|3446","church|3447","affecting|3448","tommy-gun|3449","electoral|3450","college|3451","agent|3452","munchkins|3453","woods|3454","please|3455","drugs|3456","damage|3457","process|3458","capacity|3459","inherit|3460","earth|3461","kill,|3462","office|3463","listen|3464","insecure|3465","nor|3466","benefit,|3467","shareholders|3468","movie|3469","producer|3470","loan|3471","bulimic|3472","one's|3473","participation|3474","proportional|3475","felling|3476","beneficial|3477","subjective|3478","constructions|3479","decode|3480","fashion|3481","precedent|3482","intrigued|3483","endanger|3484","institution|3485","velocity|3486","vectors|3487","combine|3488","-|3489","recombine|3490","repeating|3491","arises,|3492","converting|3493","chemical|3494","fringes|3495","reaction,|3496","efficient|3497","sufficient,|3498","encouraged|3499","we,|3500","here,|3501","serves|3502","increase|3503","certainty|3504","death:|3505","life,|3506","greatest|3507","ceremony|3508","resources|3509","potential|3510","babyburner|3511","orville|3512","ray|3513","(alchohalrelatedeaths)|3514","gun-runner|3515","facing|3516","chow|3517","cupcakes|3518","reminds|3519","mylife|3520","jealous|3521","smack|3522","crash|3523","smokin'|3524","taxi|3525","mine-|3526","trailer|3527","rockin|3528","doin'|3529","smurf|3530","acid|3531","fifteen|3532","miles|3533","kid|3534","walled|3535","west,|3536","bus|3537","stop's|3538","clinic|3539","6:00|3540","all's|3541","bi-|3542","'got|3543","eyes,|3544","hazel|3545","georgous-|3546","cheat|3547","her-|3548","ten|3549","minutes|3550","max|3551","pipe|3552","phone|3553","orgasm|3554","bitch|3555","thirty|3556","two-year-old|3557","sissy|3558","(wearing|3559","uh|3560","jello|3561","huh|3562","everyone's|3563","shakita|3564","shasta|3565","cross|3566","country,|3567","doggystyle|3568","rub|3569","blow|3570","asswhoopin'|3571","eighteen|3572","thirty-six|3573","piss|3574","lets|3575","hell|3576","simple|3577","(spoken|3578","trouble,|3579","al's|3580","autoworld|3581","catchers|3582","domestic|3583","beers|3584","beer,|3585","church,|3586","chico|3587","station|3588","sit|3589","metal|3590","belly|3591","guts|3592","flight|3593","consistently|3594","demonstrating|3595","comes:|3596","movement,|3597","works,|3598","limits|3599","relatively|3600","fist,|3601","turned|3602","motivated|3603","(lately)|3604","tricked|3605","key|3606","i2|3607","ii|3608","tighty|3609","feather|3610","maligned|3611","inseparable|3612","tolerance|3613","flung|3614","spraining|3615","happily|3616","surging|3617","aqualung|3618","numbing|3619","touch|3620","heavenly|3621","('till|3622","closer,|3623","chasing|3624","quantity|3625","test|3626","check|3627","algebra|3628","lackluster|3629","peals|3630","softness|3631","essence|3632","inferior|3633","ear,|3634","love,|3635","breeze|3636","carries|3637","dandelion|3638","squared|3639","boxed|3640","ensure|3641","division|3642","ties|3643","bowl|3644","flush|3645","(the|3646","floated|3647","sink|3648","marionette|3649","arose|3650","solidify|3651","faith|3652","prayer|3653","wrote|3654","unequivocally|3655","theirs|3656","fair|3657","(insert|3658","kansas|3659","gas|3660","station)|3661","uncouth|3662","sublet,|3663","breaker|3664","astrolabe|3665","kind:|3666","wives|3667","suitable|3668","upset|3669","load|3670","master,|3671","meantime|3672","version|3673","prime|3674","'else|3675","arising|3676","tasteful|3677","extinguished,|3678","punishment|3679","desert,|3680","air|3681","sun,|3682","copious|3683","majesty|3684","birthday|3685","undress|3686","table|3687","childish|3688","mistress,|3689","harden|3690","soften|3691","plant|3692","garden|3693","littler|3694","deliver|3695","prophesy|3696","deadline|3697","hopping|3698","realization|3699","acting|3700","downtrodden|3701","encouragement|3702","skinny,|3703","mindset|3704","slim|3705","recompense|3706","wanderlust|3707","heartache|3708","lifting|3709","damnedest|3710","wonderland|3711","softspun|3712","hemoragic|3713","fever|3714","listening|3715","keeping|3716","pathos|3717","ethics|3718","eros|3719","flashy|3720","trash|3721","categorizing|3722","baseball|3723","cards|3724","postage|3725","stamps|3726","clamp|3727","brick|3728","six-track|3729","studio|3730","meaning|3731","butterflies|3732","handkerchiefs|3733","acqualine|3734","luminance|3735","luscious|3736","fingertips|3737","prerogatives|3738","tragedies|3739","quaaludes|3740","galvanizing|3741","bitterness|3742","hardon|3743","entranced|3744","liquid|3745","embodied|3746","(of|3747","pastoral|3748","beauty)|3749","enraptured|3750","spree|3751","hiney|3752","collimated|3753","regiment|3754","buddies|3755","quicker,|3756","dysfunctional|3757","parachute|3758","lonely|3759","date|3760","flowers|3761","guys|3762","married|3763","modern|3764","skirts|3765","lunch|3766","tattoo|3767","emblem|3768","cornflakes|3769","tiretracks|3770","coast|3771","meridian|3772","massive|3773","elephant|3774","hurricane|3775","speedy|3776","heating|3777","outdoors|3778","opportunity|3779","spread|3780","spreads|3781","exit|3782","flower|3783","silence|3784","breeds|3785","institutions|3786","liberally|3787","thumb|3788","forefinger|3789","castles|3790","they're|3791","spawns|3792","ubiquitously|3793","explicitly|3794","silent|3795","partner|3796","earthquake|3797","avoided|3798","wrath|3799","strategic|3800","placement|3801","counted|3802","five,|3803","spat|3804","rockafeller|3805","relax|3806","lady,|3807","broom|3808"," |3809","uppity|3810","ewoks|3811","swap|3812","lies|3813","slept|3814","lay|3815","splayed|3816","he'll|3817","understated|3818","proclamation|3819","mutual|3820","epitome|3821","superstitions|3822","participate|3823","cricket|3824","jump|3825"," |3826","unlike|3827","rigors|3828"," |3829","superstitious|3830"," |3831","rejecting|3832","collateral|3833","untying|3834","definition|3835","antithesis|3836","end,|3837","prevent|3838","stuff|3839","yellow|3840","box,|3841","entrances|3842","victim|3843","fort|3844","jaunt|3845","territorial|3846","languishing|3847","auto|3848","repairman|3849","emphatic|3850","cesspool|3851","magnificent|3852","brilliant|3853","bars|3854","finnish|3855","eh|3856","solid|3857","vacation|3858","pawn|3859","cut|3860","non|3861","functional|3862","bills|3863","heads|3864","loses|3865","respectable|3866","front|3867","looses|3868","dignity|3869","putting|3870","airs|3871","bonfire|3872","devotion|3873","bottomless|3874","views|3875","taller|3876","stepladder|3877","helping|3878","overflowing|3879","sundrenched|3880","tomatoes|3881","fields|3882","special|3883","candy|3884","ecuador|3885","scene|3886","beast|3887","sung|3888","fruit,|3889","holds|3890","bushes|3891","hauls|3892","atmosphere|3893","marks|3894","hung|3895","quartermaster|3896","malabu|3897","matchbox|3898","driver|3899","hazard|3900","direction|3901","squint|3902","squatting|3903","harmony|3904","decompression|3905","liquefying|3906","sunshower|3907","starship|3908","freight|3909","riding|3910","funneled|3911","fuller|3912","evolving|3913","structures|3914","distributing|3915","amounts|3916","intractable|3917","goddess|3918","pity|3919","swim|3920","warped|3921","misfortune|3922","ground,|3923","farthest|3924","trip|3925","africa,|3926","discovered|3927","growth|3928","indigent|3929","prosperity|3930","recompiled|3931","thyroids|3932","proximity|3933","stuborn|3934","juice,|3935","spoon-fed|3936","spendaholics|3937","principles|3938","interfering|3939","scholastic|3940","ineptitude|3941","taskforce|3942","halo|3943","nematodes|3944","footfalls|3945","snatcher|3946","grassy|3947","window|3948","softy|3949","thomas|3950","whale|3951","watcher|3952","tradition|3953","anglican|3954","nepotism|3955","county|3956","nightly|3957","kin|3958","victims|3959","violence|3960","groves|3961","scarce,|3962","strict|3963","were,|3964","moralizing,|3965","saskatoon|3966","bred|3967","paupartair|3968","friday|3969","promptly|3970","moral|3971","theoretical|3972","support,|3973","cases,|3974","reputation|3975","tales|3976","impressionistic|3977","fortress|3978","strike|3979","strings|3980","gladly|3981","purse|3982","warm|3983","offensive|3984","cheerful|3985","qualities|3986","species|3987","say)|3988","limp|3989","earned|3990","war,|3991","squealed|3992","pinched|3993","(then|3994","odd|3995","phrases|3996","druggie|3997","hospital|3998","topless|3999","dancer,|4000","temptation,|4001","man,|4002","sorely|4003","tempted|4004","''|4005","stories|4006","researched|4007","vindictive|4008","neighborly|4009","unfortunately|4010","fanclub,|4011","fickle|4012","fierce,|4013","renting|4014","apartments|4015","jumped|4016","applications|4017","up,|4018","full,|4019","floors|4020","luggage|4021","hacked|4022","lugubrious|4023","speeches|4024","overpopulate|4025","math|4026","knead|4027","mead|4028","-rather|4029","supplied|4030","pots|4031","pans|4032","twinkle|4033","cook|4034","patter|4035","bold|4036","faced|4037","``if|4038","pleased|4039","anybody|4040","townsfolk|4041","notoriously|4042","them,|4043","ribosome|4044","nauseous|4045","judge|4046","whispered|4047","``i|4048","napping|4049","(hic)|4050","stiff|4051","sentence|4052","slammer|4053","bending|4054","narrow|4055","gently,|4056","lingering|4057","dark,|4058","funeral|4059","girls,|4060","`cause|4061","also|4062","raining,|4063","crying,|4064","died,|4065","etceteras|4066","hairy|4067","widow|4068","nephew|4069","skin|4070","alcoholic|4071","sister|4072","detox|4073","rumors|4074","relatives|4075","jowels|4076","violation|4077","similarity|4078","assurance|4079","automobile|4080","computing|4081","lenticular|4082","prophesising|4083","numbers|4084","objective|4085","combination|4086","blessing|4087","supervisory|4088","laundry|4089","territory|4090","benefits|4091","dually,|4092","preventing|4093","pollution|4094","likening|4095","ice-cream|4096","cone|4097","tomson|4098","timebomb|4099","snap|4100","obsession|4101","quiet|4102","dead-end|4103","deified|4104","glorified|4105","indication|4106","busy|4107","indefinitely|4108","evident|4109","magnet|4110","attracting|4111","suppository|4112","manufactories|4113","sublime|4114","posterity|4115","align|4116","impatience,|4117","misses|4118","ends,|4119","they've|4120","wings|4121","shy|4122","divide,|4123","remove|4124","piece|4125","encounter,|4126","sea|4127","rippled|4128","wave|4129","glimpse|4130","lose|4131","showing|4132","seasons|4133","starships|4134","clues|4135","movement|4136","fear|4137","afterthought|4138","tap|4139","sooner|4140","mountains|4141","knees|4142","lines,|4143","cowboy|4144","created|4145","externally|4146","derived|4147","consensual|4148","rhinestones|4149","blown|4150","amphetamines|4151","freedom|4152","antiquarian|4153","zoo|4154","fearing|4155","puppy|4156","hounds|4157","problems|4158","decides|4159","collide|4160","conquered|4161","presents|4162","present|4163","random|4164","sampling|4165","environments|4166","blind|4167","periodic|4168","predicted|4169","predator|4170","discover|4171","seduce|4172","prod|4173","treasures|4174","addresses|4175","despite|4176","progressive|4177","thickening|4178","account|4179","duplicity|4180","presentation|4181","existed|4182","endurance|4183","homes|4184","restricted|4185","formed|4186","frontier|4187","integrationist|4188","largely|4189","whole,|4190","extremist|4191","unorganized|4192","organize|4193","organized,|4194","disorder|4195","apart|4196","it,|4197","surges|4198","joy,|4199","laser|4200","projector|4201","concept|4202","$2000|4203","paying|4204","idea,|4205","repercussions|4206","define|4207","easier|4208","remaining|4209","liz|4210","helped|4211","affections|4212","investment|4213","reaping|4214","rewards|4215","occupying|4216","elsewhere,|4217","remains|4218","changed,|4219","habit|4220","thinking,|4221","also,|4222","allotted|4223","tasks|4224","presently,|4225","drivers|4226","dresses|4227","mysteriously,|4228","staggering,|4229","repercussion|4230","longest|4231","vulnerable|4232","regards|4233","afforded|4234","zaks|4235","fabian|4236","squad|4237","cradled|4238","stare|4239","dumpling|4240","completed|4241","teen|4242","suicide|4243","blame|4244","solidifying|4245","sex|4246","human,|4247","reservoir|4248","art,|4249","talent,|4250","fulfillment|4251","unthinking|4252","perfected|4253","sterile|4254","wholly|4255","due|4256","king|4257","shack|4258","toothache|4259","head,|4260","colder|4261","january|4262","attach|4263","onward|4264","independence|4265","idiot|4266","harpsichord|4267","calls|4268","awful|4269","imagination|4270","peanuts|4271","pulls|4272","elephantine|4273","muscle|4274","seeping|4275","speeder|4276","chock|4277","ebb|4278","eddy|4279","paranormal|4280","powers|4281","multiply|4282","checked|4283","sixty-seven|4284","wandering|4285","cares|4286","crime|4287","lords|4288","slayers|4289","underused|4290","employment|4291","guilty|4292","argued|4293","pitched|4294","landed|4295","driveway|4296","assembled|4297","secretary|4298","legitimize|4299","note|4300","collection|4301","z|4302","england|4303","crooks|4304","maniacs|4305","permit|4306","ginny,|4307","farm|4308","cute,|4309","rustic|4310","tuesdays|4311","appropriately|4312","attired|4313","obnoxious|4314","postwar|4315","western|4316","maureen|4317","ovaltine|4318","that,|4319","slick|4320","file|4321","air-force|4322","rangers|4323","activity|4324","hall|4325","expatriated|4326","brooklyn|4327","rhythm|4328","jelly|4329","doughnut|4330","caty|4331","queen|4332","goings|4333","succeed|4334","naysayers|4335","composed|4336","craft|4337","favor|4338","clever|4339","techniques|4340","popularized|4341","notion|4342","market|4343","freaks|4344","understand,|4345","script|4346","freestyle|4347","team|4348","pours|4349","coffee|4350","sell|4351","explanation|4352","practical|4353","servility|4354","hostility|4355","backwater|4356","boats|4357","scholars|4358","scores|4359","bottle|4360","earful|4361","apostolic|4362","necromaniacle|4363","posttoastieness|4364","entire|4365","stock|4366","taxes|4367","down,|4368","wont|4369","show,|4370","robert's|4371","negotiates|4372","legal|4373","fathers|4374","punched|4375","nose|4376","cops|4377","business|4378","falls|4379","robert|4380","humv|4381","gotta|4382","rid|4383","damn|4384","stroke|4385","allotment|4386","sweating|4387","personalities|4388","eleven|4389","philosophies|4390","inconvenience|4391","bandages|4392","ripped|4393","garret|4394","delighted|4395","festivities|4396","close,|4397","neither|4398","contraceptives|4399","desire,|4400","fruitless|4401","fruit|4402","wolfhound|4403","charge,|4404","on,|4405","car,|4406","play|4407","traffic,|4408","visit|4409","intermission|4410","spilling|4411","dress,|4412","fibers,|4413","walk,|4414","peck|4415","cheek,|4416","washroom,|4417","blood,|4418","ransom|4419","paid,|4420","orifices,|4421","scrunch|4422","strap|4423","digging|4424","back,|4425","grates|4426","drink|4427","wine,|4428","slip|4429","earring|4430","projection|4431","booth|4432","closed,|4433","screen,|4434","row|4435","us,|4436","galloped|4437","speed|4438","seconds,|4439","minutes,|4440","passed,|4441","newly|4442","conceived|4443","binding|4444","address|4445","fruit's|4446","rind|4447","word|4448","primitive,|4449","freddy|4450","emphasis|4451","horrible|4452","adjectives|4453","decisions|4454","impunity|4455","reserve|4456","tuesday|4457","cleaners,|4458","director|4459","(why|4460","prudence|4461","unbridled|4462","splendor|4463","stabled|4464","racehorse|4465","b33n|4466","advise|4467","decisiveness|4468","exact|4469","determination|4470","goin|4471","storing|4472","turning|4473","fractional|4474","responses|4475","funny,|4476","educational,|4477","ensures|4478","useful,|4479","dig|4480","strongest|4481","weeded|4482","pcb's|4483","pesticides|4484","virus|4485","unravel|4486","expose|4487","available|4488","fiercer|4489","converses|4490","jar:|4491","ekg|4492","aura|4493","mental|4494","state,|4495","rate,|4496","respiration,|4497","blink|4498","rate|4499","electrodes|4500","displays|4501","map|4502","group|4503","access|4504","medical|4505","chart|4506","aids,|4507","relevant,|4508","herpes|4509","charts|4510","section|4511","chemicals|4512","organic|4513","substances|4514","alter|4515","body's|4516","substance|4517","alll|4518","kentuckytallahasseetexas|4519","strength|4520","choke|4521","safeto|4522","pullyou|4523","culled|4524","re-livers|4525","reads|4526","refuse|4527","cater|4528","angst|4529","less,|4530","even,|4531","mistakes|4532","swiped|4533","generation|4534","people,|4535","kills|4536","everybody|4537","competitor,|4538","traitor|4539","undoing|4540","earth's|4541","sound|4542","like,|4543","reassured|4544","knowing|4545","indicator|4546","health|4547","upsetting|4548","things,|4549","indicate|4550","unwell|4551","contains|4552","pleasing|4553","problem,|4554","feeds|4555","menu|4556","(and|4557","try)|4558","shocking|4559","letting|4560","slowly,|4561","accessibly|4562","wasted|4563","incompetence|4564","mud|4565","else,|4566","completely|4567","muddy|4568","logical|4569","prophets|4570","integrity|4571","instantly|4572","adequate|4573","excessive,|4574","energy,|4575","economic|4576","bottom|4577","undervalued,|4578","developed|4579","un-talked|4580","un-loved|4581","zzzz|4582","told,|4583","cajole|4584","terrorize|4585","completing|4586","task|4587","belligerent|4588","roast|4589","debate|4590","wakes|4591","morning|4592","denial|4593","spastic|4594","oversight|4595","cold-blooded|4596","spins|4597","hat-dance|4598","rip-off|4599","designed|4600","pockets|4601","san|4602","fran|4603","cheated|4604","pickup|4605","extraordinary|4606","because,|4607","oilers|4608","pickups,|4609","payday,|4610","uuup|4611","liked|4612","gasp|4613","panderers|4614","ranchero|4615","ny|4616","necktie|4617","gucci|4618","swim-shirts|4619","pampered|4620","members|4621","midriff|4622","wax,|4623","slippery|4624","lubricant|4625","wrist|4626","game|4627","eons|4628","teguciga|4629","lpa|4630","neckties|4631","pajamas|4632","grand|4633","tetanus|4634","idaho|4635","stare,|4636","now,|4637","penguin|4638","mark|4639","penguins|4640","scrubby|4641","you'd|4642","treadmill|4643","hype|4644","wholesome|4645","devil's|4646","broiled|4647","corn|4648","cob|4649","raspberry|4650","shortbread|4651","deafening|4652","cattle|4653","fashionable|4654","unbelievably|4655","svelte|4656","i'|4657","retribution,|4658","roll|4659","retrying|4660","locked|4661","ferrari|4662","fourth|4663","gear|4664","stubby|4665","clutch|4666","'m|4667","fishes|4668","resolve|4669","owned|4670","mercedes|4671","overwhelming|4672","threw|4673","dishes|4674","tune|4675","police|4676","spun|4677","infinity|4678","melted|4679"]
+;
+ 
+
+OIDM=WHO;
+
+ 
+	var itemIndex;
+	var O=[];
+	for  (item=0;item<OIDM.length;item++)
+		{
+			//itemIndex=lastWho+item+1;
+			O[item]=OIDM[item].toString().split('|')[0];
+			// this is a structure which puts the word and ID together.
+			//it is needed when the word is indexed in different functions
+		}
+	localStorage.O=JSON.stringify(O);
+	
+	
+ 
+//global variable
+var sentence = [];
+var sentenceIndex = [];
+var localSentence = [];
+var localSentenceIndex = [];
+//var consumptionVectorO=0;
+var sentHTML = "";
+var sentbare = "";
+var acc="";
+var accs="";
+
+function U1runit(){}
+
+var s = 0;
+var lilauth='<div class="dp" >叵</div>';
+//<a class="dp" href="http://xn--ppr。com">
+var auth='/jesse/';
+function observe(inO,localOID,localSentenceIndex,s)
+	{
+	
+	document.getElementById("consumptionVector").innerHTML = localOID + ", " +  localSentenceIndex;
+	
+	
+	
+	
+		if (consumptionVectorO + 1 == localSentenceIndex)
+		{
+		
+		inO.style.background='rgba(251, 231, 245, 0.8) ';
+		theCurrentSentence = "auth_"+s;
+		document.getElementById("auth_"+s).innerHTML = s+" "+lilauth;
+		// cant sign it because of javascript arrays
+			//sentenceIndex[s][0][0]=auth;
+		}
+	else
+		{
+		inO.style.background='none';
+		lastLocalOID =localOID;
+		}
+		consumptionVectorO=localSentenceIndex;
+	}
+
+function U2runit(s)
+{
+// s =parseInt(Math.random() * 250);
+  acc="";
+  accs="";
+//var localoID=0;
+//var lastLocaloID=0;
+//var consumptionVectorO=0;
+  localSentenceIndex=0;
+  localSentence = sentenceIndex[s];
+	{
+	 localSentenceIndex=0;
+	 delimeter="";
+	for (var w of localSentence)
+		{
+		localOID=OIDM[parseInt(w)].toString().split('|')[1];
+		var acc= acc    + " <span onmouseover=observe(this,"+localOID+","+localSentenceIndex+","+s+") >" + OIDM[parseInt(w)].toString().split('|')[0]  + "</span> ";
+		var accs= accs  + delimeter + OIDM[parseInt(w)].toString().split('|')[0] ;
+		localSentenceIndex=localSentenceIndex+1;
+		delimeter=" ";
+		}
+		 sentHTML = sentHTML + acc  + ".<span id='auth_"+s+"' >["+s+"]</span><br>" ;
+		 sentbare = sentbare + accs  + "." + "\n" ;
+
+	}
+s++;
+document.getElementById("out").innerHTML = sentHTML ;
+document.getElementById("sentenceList").value = sentbare;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+function words(str) {
+var graphH='<svg width="100px" height="100px" viewBox="0 0 100 50"><path stroke="#000000" fill="none" ';
+var graphT='  />';
+var graph="";
+var tex="";var dotex=1;
+var alpha="abcdefghijklmnopqrstuvwxyz";
+        var c = 0;ww=0;
+        var word = []; // we are going to read these in, using a word index from 20190804 or so.
+        var dial = [];
+        var lastword="";
+        var acc="";accd="";wv="";
+var p=0; var got=0; var bol=[];
+//var sentence = [];
+//var localSentence =[];
+var lw=0;var sen=0;
+var localSentence =[];
+     while (c < str.length)
+     {
+          if (str.charAt(c)!="."&&str.charAt(c)!="  "&&str.charAt(c)!="\n"&&str.charAt(c)!="\r")
+                {
+ 					str=str.toLowerCase();
+ 					acc=acc+""+str.charAt(c);
+ 						//wv=wv+""+ (str.charCodeAt(c)-64) +",";
+                        //because the words are separated by spaces
+                        if (str.charAt(c)==" "&&str.charAt(c+1)!=" ")
+                            {
+                                    var w = acc.replace(/ /gi, "");
+ 									w = w.replace(/\t/gi, "");
+
+                                    var w2 = w.replace(/\'s/gi, "");
+                                    var w3 = w.replace(/\n\r/gi, "");
+ 													   w2=w3;
+ 													   //wv="";
+                                    //var p=0; var got=0; var bol=[];
+                                        if (w2 !="")
+                                            {
+ 													   //graph=graph+"d=\"M50,30 L";
+ 													   graph=graph+" d=\"M"+((Math.cos((2*Math.PI /w2.length) )*10)+50)+ ","+((Math.sin((2*Math.PI /w2.length) )*10)+30)+ " ";
+ 													   //makes inner shape
+ 													   for (var i = 0; i < w2.length; i++)
+ 													   {
+ 													   thisChar=parseFloat(w2.charCodeAt(i)-64)*.5;
+ 													   wv=wv+""+ (w2.charCodeAt(i)-64) +",";
+ 													   graph=graph+" "+((Math.cos((2*Math.PI /w2.length)*i)*10)+50)+ ","+((Math.sin((2*Math.PI /w2.length)*i)*10)+30)+ " ";
+ 													   //graph=graph+" "+Math.cos((2*Math.PI /w2.length)*i)*20+ ","+(w2.charCodeAt(i)-64)*2+",";
+ 													   }
+ 													   graph=graph+" "+((Math.cos((2*Math.PI /w2.length)*0 )*10)+50)+ ","+((Math.sin((2*Math.PI /w2.length)*0 )*10)+30)+ " ";
+ 													   //graph=graph+"\" ";
+ 													   graph=graph+"  M50,30 L ";
+ 													   // this makes the outer circle
+ 													   for (var i = 0; i < 36; i++)
+ 													   {
+ 													   //wv=wv+""+ (w2.charCodeAt(i)-64) +",";
+ 													   graph=graph+" "+((Math.cos((2*Math.PI /36)*i)*20)+50)+ ","+((Math.sin((2*Math.PI /36)*i)*20)+30)+ " ";
+ 													   //graph=graph+" "+Math.cos((2*Math.PI /w2.length)*i)*20+ ","+(w2.charCodeAt(i)-64)*2+",";
+ 													   }
+ 													   graph=graph+" M50,30  ";
+ 													   for (var i = 0; i < w2.length; i++)
+ 													   {
+ 													   lineLength=3;
+ 													   thisChar=parseInt(w2.charCodeAt(i)-64);
+ 													   // think this makes the letter callout lines
+ 													   graph=graph+"M50,30   L  "+((Math.cos((2*Math.PI /26)*thisChar)*lineLength*35+10)+50)+ ","+((Math.sin((2*Math.PI /26)*thisChar)*lineLength*35+10)+30)+ " ";
+ 													   //graph=graph+" "+Math.cos((2*Math.PI /w2.length)*i)*20+ ","+(w2.charCodeAt(i)-64)*2+",";
+ 													   }
+ 													   if(dotex)
+ 													   {
+ 													   var tx=0;ty=0;
+ 													   for (var i = 0; i < 26; i++)
+ 													   {
+														tx=((Math.cos((2*Math.PI /26)*i)*35+10)+38);
+ 													   ty=((Math.sin((2*Math.PI /26)*i)*35+10)+24);
+ 													   tex=tex+'<text font-family="Verdana" font-size="7" x="'+ tx +'" y="' + ty +' ">' + alpha.charAt(i) +'</text>';
+ 													   }
+ 													   }
+ 													graph=graph+"\" ";
+													dial[ww] = "<p>["+w2+"<br/>"+graphH + graph + graphT +tex +"</svg>]";
+													word[ww] = w2;
+													localSentence[lw]=w2;
+													//alert("w twoo "+ localSentence[lw] );
+													 lw++;
+ 													//   word[ww] =  w2;
+ 												//	trans.elements["wordup"].value=tex;
+                                                       /*
+                                                       got=0;
+                                                       for (i=1;i<word.length;i++)
+                                                       {
+                                                        if (word[i] == w3)
+                                                           {got=i;}
+                                                        else
+                                                           {got=0;}
+                                                       }
+                                                       if (got<1){bol[p]=w3;p++;}else{bol[p]=word[i]+":"+w3+"|"+got;p++;}
+                                                       //bol[p]=got + "{"+i+"/"+ww+"}" + w3 + "-" + word[i];
+                                                       */
+                                                ww++;
+                                            }
+							lastword =acc;
+							acc="";wv="";graph="";tex="";
+                            }
+                }
+				if (
+				str.charAt(c)=="." ||
+				str.charAt(c)=="?" ||
+				str.charAt(c)=="!" ||
+				str.charAt(c)=="\n" ||
+				str.charAt(c)=="\r"
+				)
+				//20200510jesse
+				//speriod=0;
+				//if(str.charAt(c)=="." ) //&& str.charAt(c+1)==" " )
+				//	{speriod=1;}
+				//if (speriod || str.charAt(c)=="\n" || str.charAt(c)=="\r")
+                //if (str.charAt(c) == "." )//|| str.charAt(c) =="  " || str.charAt(c) =="\n" )//|| str.charAt(c)!="\r")
+                {
+				var w = acc.replace(/ /gi, "");
+				/*
+				w = w.replace(/\t/gi, "");
+				w = w.replace(/,/gi, "");
+				w = w.replace(/\[/gi, "");
+ 				w = w.replace(/\]/gi, "");
+				w = w.replace(/\"/gi, "");
+				w = w.replace(/!/gi, "");
+				w = w.replace(/\?/gi, "");
+				*/
+				var w2 = w.replace(/\'s/gi, "");
+				var w3 = w.replace(/\n\r/gi, "");
+				w2=w3;
+					if (w2 !="")
+					{
+					//alert(lastword);
+					//lw++;
+					localSentence[lw]=w2;
+					dial[ww] = "<p>["+w2+"<br/>"+graphH + graph + graphT +tex +"</svg>]";
+					word[ww] = w2;
+					ww++;
+					sentence[sen]=localSentence;//.join(' ') ;
+					sen++;
+					lw=0;
+					//
+					//alert (localSentence, w2);
+					localSentence=[];
+					lastword="";acc="";wv="";graph="";tex="";
+					}
+				}
+      c++;
+     }
+     
+     var oldNewWords = word ; //.concat(O);
+      	localStorage.sentence=JSON.stringify(sentence);
+											//202005041237
+                                               // var oldNewWords = WHO.concat(word);
+                                                       // 4680 words from 0
+								   
+                                                       var uniq = oldNewWords//word  //oldNewWords
+                                                       .map((name) => {
+                                                            return {count: 1, name: name}
+                                                            })
+                                                       .reduce((a, b) => {
+                                                               a[b.name] = (a[b.name] || 0) + b.count
+                                                               return a
+                                                               }, {})
+                                                       
+                                                         var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1)
+nodes=oldNewWords;//word;
+
+return Object.keys(uniq);
+}
+    
+    
+    
+    
+    
+ 
+
+function jiawords(thewords)
+	 {
+	// we are first going to load the OIDM from local storage. We will add words to it as needed.
+	//thewords=words(who.elements["who"].value);
+	////OIDM=[];
+	lastWho = 0;
+	//alert("Loaded "+thewords.length+" word symbols.");
+	OIDMlength=OIDM.length;
+	WHOlength=WHO.length;
+	lastWho = parseInt(WHO[WHOlength-1].toString().split('|')[1]) ;
+	alert("Jiawords Loaded "+thewords.length+" word symbols. WHO contains "+WHOlength+" word symbols, itself listing "+lastWho);
+//
+	var itemIndex;
+	for  (item=0;item<thewords.length;item++)
+		{
+			itemIndex=lastWho+item+1;
+			OIDM[OIDMlength+item]=thewords[item]+"|"+itemIndex;
+			// this is a structure which puts the word and ID together.
+			//it is needed when the word is indexed in different functions
+		}
+	//nodes=OIDM;
+	var oldNewWords = WHO.concat(OIDM);
+	trans.elements["wordup"].value=JSON.stringify(oldNewWords);
+	trans.elements["seq2seqVocabulary"].value=JSON.stringify(oldNewWords);
+	
+	 
+		
+		
+	//202005041048 jesse
+	//localStorage.whojson=JSON.stringify(oldNewWords);
+	//201807051103 this overwrites whatever is in localStorage.whojson
+	nodes=oldNewWords;
+	OIDM=nodes;
+	localStorage.nodes=JSON.stringify(oldNewWords);
+	localStorage.OIDM=JSON.stringify(oldNewWords);
+	}
+ 						 
+ 	
+ 	
+ 	
+function dowords()
+	{
+// we are first going to load the OIDM from local storage. We will add words to it as needed.
+	thewords=words(trans.elements["textIn"].value);
+	OIDM=[];
+	lastWho = 0;
+//alert("Loaded "+thewords.length+" word symbols.");
+	WHOlength=WHO.length;
+	//OIDM must start at 0
+	//lastWho = parseInt(WHO[WHOlength-1].toString().split('|')[1]) ;
+
+	var itemIndex;
+//lastWho = 100000;
+	for  (item=0;item<thewords.length;item++)
+		{
+			itemIndex=lastWho+item;//+1;
+			OIDM[item]=thewords[item]+"|"+itemIndex;
+		// this is a structure which puts the word and ID together.
+		//it is needed when the word is indexed in different functions
+		}
+//nodes=OIDM;
+
+//var oldNewWords = WHO.concat(OIDM);
+var oldNewWords = OIDM;
+	//alert("Loaded "+thewords.length+" word symbols. WHO contains "+WHOlength+" word symbols, itself listing "+lastWho);
+	alert("Loaded "+thewords.length+" new word symbols. ");
+	trans.elements["wordup"].value=JSON.stringify(oldNewWords);
+//202005041048 jesse
+//localStorage.whojson=JSON.stringify(oldNewWords);
+//201807051103 this overwrites whatever is in localStorage.whojson
+	nodes=oldNewWords;
+	OIDM=nodes;
+	localStorage.nodes=JSON.stringify(oldNewWords);
+	localStorage.OIDM=JSON.stringify(oldNewWords);
+//
+
+
+	thisLine="";
+	thewords=[];
+	trans.elements["seq2seqVocabulary"].value="";
+	document.getElementById("sentenceList").value ="";
+	for  (item=0;item<oldNewWords.length;item++)
+		{
+			//itemIndex=lastWho+item+1;
+			thisLine = oldNewWords[item].toString().split('|')[0] ;
+			thewords[item] = thisLine;
+			idIndex= item + lastWho;
+trans.elements["seq2seqVocabulary"].value=trans.elements["seq2seqVocabulary"].value + thisLine+"	"+ idIndex + "\n";
+			// this is a structure which puts the word and ID together.
+			//it is needed when the word is indexed in different functions
+		}
+		
+		
+		
+	function findit(element, w) {
+		return element == w ;
+	}
+//
+	var i=0;
+	var s=0;
+	localSentence=[];
+	localSentenceIndex = [];
+	localIndex=[];
+	sentenceIndex = [];
+	for (var localSentence of sentence)
+		{
+		for (var w of localSentence)
+			{
+			if (matchObj2( w  )[0])
+				{
+					if (matchObj2( w  )[0].length >1)
+						{
+							var indexx =      matchObj2( w  )[0].toString().split('|')[1]   ;
+						}
+					else
+						{
+						indexx="_";
+						}
+				//console.log("from " + w + " localSentenceIndex["+ i + "]:" + indexx);
+				localSentenceIndex[i]=indexx;
+				i++;
+				}
+			}
+		i=0;
+		sentenceIndex[s]=localSentenceIndex;
+		//console.log(localSentence +"\n"+localSentenceIndex+"\n")
+		localSentenceIndex=[];
+		s++;
+		}
+	localStorage.sentenceIndex=JSON.stringify(sentenceIndex);
+	//trans.elements["enc"].value=localStorage.sentenceIndex;
+	return OIDM;
+	}
+
+
+
+
+
+/// 20180924 jesse
+function doEnc2()
+	{
+	var inData = trans.elements["textIn"].value;  //enc.elements["enc"].value
+// make a regular expression here which converts STRING COMMA STRING to STRING COMMA SPACE STRING
+
+	inData = inData.replace(/\n/gi, " ");
+	inData = inData.replace(/\r/gi, "");
+	
+	inData = inData.replace(/：/gi, " ");
+	inData = inData.replace(/:/gi, " ");
+	inData = inData.replace(/，/gi, " ");
+	inData = inData.replace(/,/gi, " ");
+	inData = inData.replace(/ /gi, " ");
+	inData = inData.replace(/ /gi, " ");
+	inData = inData.replace(/】/gi, " ");
+	inData = inData.replace(/\]/gi, " ");
+	inData = inData.replace(/【/gi, " ");
+	inData = inData.replace(/\[/gi, " ");
+	
+	var splitInData=inData.toString().toLowerCase().split(' ');
+/*
+var w = splitInData;
+w = w.replace(/./gi, "");
+w = w.replace(/\t/gi, "");
+w = w.replace(/\[/gi, "");
+w = w.replace(/\]/gi, "");
+w = w.replace(/\"/gi, "");
+w = w.replace(/!/gi, "");
+w = w.replace(/\?/gi, "");
+w = w.replace(/\'s/gi, "");
+w = w.replace(/\n\r/gi, "");
+splitInData = w;
+*/
+	var w = "";
+	var matched="";
+	var curEnc = "";
+	for  (item=0;item< value_limit(splitInData.length,0,99999);item++) // 201807051134
+		{
+		w=splitInData[item] ;
+		w = w.replace(/\./gi, "");
+//var acc=splitInData[item])[0].toString().toLowerCase().split('|')[0];
+		w = w.replace(/\t/gi, "");
+		w = w.replace(/\)/gi, "");
+		w = w.replace(/\(/gi, "");
+		w = w.replace(/\[/gi, "");
+		w = w.replace(/\]/gi, "");
+		w = w.replace(/\"/gi, "");
+		w = w.replace(/!/gi, "");
+		w = w.replace(/\?/gi, "");
+		w = w.replace(/\'s/gi, "");
+		w = w.replace(/\n\r/gi, "");
+/*
+*/
+//w = splitInData[item])[0].toString();
+  //[0] ;
+//if (!matchObj2(splitInData[item])[0])
+//		if (!matchObj(splitInData[item])[0])
+/// 202005040934WA jesse (matchObj > matchObj2)
+// if there is nothing in OIDM then this will not give results.
+// check the "dowords" function, and comment the lines that store to local storage.
+		matched = matchObj2(w).toString().toLowerCase().split('|')[0] ;
+		if ( !matched )
+			{
+			curEnc = curEnc + " <font color=red>" + w + "</font>";
+			}
+		else
+			{
+			curEnc = curEnc + " <font color=black><a href=#>" + matched + "</a></font>";
+			}
+		}
+ //trans.elements["enc"].value=curEnc;
+ document.getElementById("enc").innerHTML =  curEnc;
+	}
+
+ 
+ 
+ 
+
+function matchObj3(array, input) {
+ 		//var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+ 	return array.filter(function(thenode) {
+ 						 if (thenode.match(input)) {
+ 						 return thenode;
+ 						 }
+ 						 });
+}
+
+function matchObj2(input) {
+ 		//var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+ 	return OIDM.filter(function(thenode) {
+ 						 if (thenode.toString().split('|')[0] === input) {
+ 						 return thenode;
+ 						 }
+ 						 });
+}
+
+
+ function matchObj(input) {
+		 //var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+	 return OIDM.filter(function(thenode) {
+						  if (thenode.match(input)) {
+						  return thenode;
+						  }
+						  });
+ }
+			
+			
+			
+ 
+var localSentenceIndex=-1;
+
+     </script>
+
+ <Xcenter>
+ 
+ <form name="trans" action="https://xixuankeji.com/u/upnode.es" method="get"  >
+ 
+<textarea id="textIn" >type</textarea>
+<textarea id="wordup" >type</textarea>
+<textarea id="seq2seqVocabulary" >seq2seqVocabulary</textarea>
+<textarea id="sentenceList" >sentenceList</textarea>
+<div style="podo" id="consumptionVector">consumptionVectorO</div>
+<div style="podo" id="out"></div>
+<div cols=120 rows=10 name="enc" id="enc"  > This is text inside _enc_
+</div>
+
+	<input type="button" value="Ajax " name="words" onClick="loadJSON();">
+ 	<input type="button" value="Load " name="words" onClick="nodes=dowords();">
+ 	<input type="button" value="doEnc " name="r" onClick="nodes=doEnc2();">
+	<input type="button" value="disp " name="r" onClick="disp();">
+	<input type="button" value="displaySentencesReverse" name="r" onClick="displaySentencesReverse();">
+	<input type="button" value="displayIndSentencesReverse" name="r" onClick="displayIndSentencesReverse();">
+
+
+</form>
+     <script>
+ 
+		//func[9]="value_limit";
+		function value_limit(val, min, max) {
+			return val < min ? min : (val > max ? max : val);
+		}
+		
+		
+		
+		function disp()
+			{
+			for  (item=0;item< value_limit(sentenceIndex.length,0,99999);item++)
+				{
+				U2runit(item);
+				}
+			}
+			
+	//	var pa = setInterval(function(){ U1runit();U2runit() }, 35);
+
+
+
+
+
+function displayReverse(s)
+{
+	acc="";
+	accs="";
+	localSentenceIndex=0;
+	localSentence = sentenceIndex[s];
+	localSentence.reverse();
+		{
+		localSentenceIndex=0;
+		delimeter="";
+		for (var w of localSentence)
+			{
+			localOID=OIDM[parseInt(w)].toString().split('|')[1];
+			var acc= acc    + " <span onmouseover=observe(this,"+localOID+","+localSentenceIndex+","+s+") >" + OIDM[parseInt(w)].toString().split('|')[0]  + "</span> ";
+			var accs= accs  + delimeter + OIDM[parseInt(w)].toString().split('|')[0] ;
+			localSentenceIndex=localSentenceIndex+1;
+			delimeter=" ";
+			}
+		sentHTML = sentHTML + acc  + ".<span id='auth_"+s+"' >["+s+"]</span><br>" ;
+		sentbare = sentbare + accs  + "." + "\n" ;
+		}
+s++;
+document.getElementById("out").innerHTML = sentHTML ;
+document.getElementById("sentenceList").value = sentbare;
+ }
+
+
+
+	 function displayIndReverse(s)
+	 {
+		 acc="";
+		 accs="";
+		 localSentenceIndex=0;
+		 localSentence = sentenceIndex[s];
+		 localSentence.reverse();
+			 {
+			 localSentenceIndex=0;
+			 delimeter="";
+			 for (var w of localSentence)
+				 {
+				 localOID=OIDM[parseInt(w)].toString().split('|')[1];
+				 var acc= acc    + " <span onmouseover=observe(this,"+localOID+","+localSentenceIndex+","+s+") >" + OIDM[parseInt(w)].toString().split('|')[1]  + "</span> ";
+				 var accs= accs  + delimeter + OIDM[parseInt(w)].toString().split('|')[1] ;
+				 localSentenceIndex=localSentenceIndex+1;
+				 delimeter=" ";
+				 }
+			 sentHTML = sentHTML + acc  + ".<span id='auth_"+s+"' >["+s+"]</span><br>" ;
+			 sentbare = sentbare + accs  + "." + "\n" ;
+			 }
+	 s++;
+	 document.getElementById("out").innerHTML = sentHTML ;
+	 document.getElementById("sentenceList").value = sentbare;
+	  }
+
+
+function displaySentencesReverse(s)
+	{
+	for  (item=0;item< value_limit(sentenceIndex.length,0,99999);item++)
+		{
+		displayReverse(item);
+		}
+	}
+	
+function displayIndSentencesReverse(s)
+	{
+	for  (item=0;item< value_limit(sentenceIndex.length,0,99999);item++)
+		{
+		displayIndReverse(item);
+		}
+	}
+	
+	displayIndReverse
+	
+     </script>
+
