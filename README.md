@@ -1,4 +1,4 @@
-**Circularity Accounting Model
+**Circularity Accounting Model**
 
 This repository contains the tools for training CO2 sequence models for the circularity accounting model project, which develops a CO2 estimator and a CO2 production-consumption chain predictor.
 
