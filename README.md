@@ -3,6 +3,18 @@
 CO2 increase is a main contributor to climate change, but this vast impact is not well quantified in terms of individual human behaviors. 
 We develop tools for training CO2 sequence models for the circularity accounting model project, which develops a CO2 estimator and a CO2 production-consumption chain predictor
 
+Our goal is to organize data so that it can be trained into models of CO2 chains.
+
+1] Who organizes the data?
+
+2] What is the data?
+
+3] What are the models?
+
+4] What are the CO2 chains?
+
+
+[3] **The model architectures**
 The model architecture is based on front-stage image detectors and recognizers connected to production chain sequence models. this repository contains the sequence training tools.
 
 1. Using the carbon data from the CCaLC database and create a graph for training the network modules by using the website graph tool: https://www.entropynetwork.com/circularity/app.html?jsonURL=&xres=2048&yres=2048&imageURL=
