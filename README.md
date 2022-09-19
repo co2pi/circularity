@@ -7,3 +7,4 @@ The model architecture is based on front-stage image detectors and recognizers c
 
 Using the carbon data from the CCaLC database and create a graph for training the network modules by using the website graph tool: https://www.entropynetwork.com/circularity/app.html?jsonURL=&xres=2048&yres=2048&imageURL=
 
+<img src="https://github.com/co2pi/circularity/blob/main/Screen%20Shot%202022-09-11%20at%2014.04.19.png" alt="Alt text" title="Optional title">
