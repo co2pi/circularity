@@ -17,7 +17,7 @@ Our goal is to organize data so that it can be trained into models of CO2 chains
 [3] **The model architectures**
 The model architecture is based on front-stage image detectors and recognizers connected to production chain sequence models. this repository contains the sequence training tools.
 
-## Build our data
+## Building our data
 
 1. Using the carbon data from the CCaLC database and create a graph for training the network modules by using the website graph tool: https://www.entropynetwork.com/circularity/app.html?jsonURL=&xres=2048&yres=2048&imageURL=
 
@@ -116,7 +116,7 @@ Do it 4 times until all files(target.txt; sources.txt; vocab target.txt; vocab s
 
 ### 2. How to adjust running step:
 
-‘**cd ~’
+‘**cd ~**’
 
 ‘**cd 2022s2s/seq2seq**’
 
@@ -128,3 +128,21 @@ Change the number to any running step you want
 
 If your running step is not large enough, your result may appear ‘UNK’
 <img src="https://github.com/co2pi/circularity/blob/main/photo/Picture5.png " alt="Alt text" title="Optional title">
+
+### **3. How to train the model:**
+
+‘**cd ~**’ go back to main directory
+‘**cd 2022s2s/seq2seq**’ re-enter the seq2seq directory
+‘**source ~/clone/venv3/bin/activate**’ create an environment
+‘**./CVM_train.sh**’ foreground running
+‘**./CVM_background_train.sh**’ background running
+
+### **4. How to run the model**
+
+After train the model, continue type (which means we are in the same directory and environment):
+‘**./CVM_1_postText.cgi**’
+Press **enter**
+**Copy the last line of the code run it.**
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture6.png " alt="Alt text" title="Optional title">
+The result will post on the website. 
+
