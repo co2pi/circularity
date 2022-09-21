@@ -86,12 +86,17 @@ Enter password:
 
 ### How to put your data in the program:
  ’**bash**‘ create a new shell
- 
  ’**cd 2022s2s/seq2seq**’ change directory to the seq2seq direc.
- 
  ‘**cd nmt_data**’
  ‘**cd CVM**’
  ‘**cd train**’
  ‘**ls**’ (list) show all files in this folder
 
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png![image](https://user-images.githubusercontent.com/112356421/191619844-fa72008a-f6b2-408c-b080-dd1820376341.png)
+" alt="Alt text" title="Optional title">
+
+We can see we have four txt.file in the train folder. They correspond to the four data that we did earlier
+’**nano xxxx(file’s name)**’ to edit the data. 
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture3.png![image](https://user-images.githubusercontent.com/112356421/191619944-05132b47-e4ef-4bb7-b52f-8102d2acab17.png)
+" alt="Alt text" title="Optional title">![image](https://user-images.githubusercontent.com/112356421/191619930-043eff3b-89b1-47f5-8dca-cbb967e87f65.png)
 
