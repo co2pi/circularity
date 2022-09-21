@@ -25,7 +25,7 @@ The model architecture is based on front-stage image detectors and recognizers c
 
 2. Press the first line of vector, in here is ‘RawMaterials_a’ and press ‘findVector’. Copy the generated text it and past in a new txt file.
 3. Use the website to convert the generated text to the computer-can-read sentence. http://www.entropynetwork.com/text/
-   Past it in the first blank box and press ‘load’. 
+   Past it in the first blank box and press ‘**load**’. 
 	 Save the generated text in the third box.
 
 <img src="https://github.com/co2pi/circularity/blob/main/photo/Picture1.png" alt="Alt text" title="Optional title">
@@ -98,7 +98,7 @@ Enter password:
  
  ‘**ls**’ (list) show all files in this folder
 
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png" alt="Alt text" title="Optional title">![image](https://user-images.githubusercontent.com/112356421/191620351-ebae4057-4edd-40e6-bfdf-4569dfc8bfb9.png)
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png" alt="Alt text" title="Optional title">
 
 
 We can see we have four txt.file in the train folder. They correspond to the four data that we did earlier
@@ -116,7 +116,7 @@ Do it 4 times until all files(target.txt; sources.txt; vocab target.txt; vocab s
 
 ### 2. How to adjust running step:
 
-‘**cd ~**’
+**‘cd ~’**
 
 ‘**cd 2022s2s/seq2seq**’
 
@@ -132,9 +132,13 @@ If your running step is not large enough, your result may appear ‘UNK’
 ### **3. How to train the model:**
 
 ‘**cd ~**’ go back to main directory
+
 ‘**cd 2022s2s/seq2seq**’ re-enter the seq2seq directory
+
 ‘**source ~/clone/venv3/bin/activate**’ create an environment
+
 ‘**./CVM_train.sh**’ foreground running
+
 ‘**./CVM_background_train.sh**’ background running
 
 ### **4. How to run the model**
