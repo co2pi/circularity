@@ -86,7 +86,9 @@ Enter password:
 
 ### How to put your data in the program:
  ’**bash**‘ create a new shell
+ 
  ’**cd 2022s2s/seq2seq**’ change directory to the seq2seq direc.
+ 
  ‘**cd nmt_data**’
  ‘**cd CVM**’
  ‘**cd train**’
