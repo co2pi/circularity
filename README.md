@@ -93,8 +93,8 @@ Enter password:
  ‘**cd train**’
  ‘**ls**’ (list) show all files in this folder
 
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png![image](https://user-images.githubusercontent.com/112356421/191620181-72044660-2b48-4124-ab6c-0388b367bb25.png)
-" alt="Alt text" title="Optional title">
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png" alt="Alt text" title="Optional title">![image](https://user-images.githubusercontent.com/112356421/191620351-ebae4057-4edd-40e6-bfdf-4569dfc8bfb9.png)
+
 
 We can see we have four txt.file in the train folder. They correspond to the four data that we did earlier
 ’**nano xxxx(file’s name)**’ to edit the data. 
