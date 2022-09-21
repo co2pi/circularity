@@ -116,7 +116,7 @@ Do it 4 times until all files(target.txt; sources.txt; vocab target.txt; vocab s
 
 ### 2. How to adjust running step:
 
-‘**cd ~**’
+‘**cd ~’
 
 ‘**cd 2022s2s/seq2seq**’
 
