@@ -85,6 +85,7 @@ Type what inside of ‘’
 Enter password: 
 
 ### How to put your data in the program:
+
  ’**bash**‘ create a new shell
  ’**cd 2022s2s/seq2seq**’ change directory to the seq2seq direc.
  ‘**cd nmt_data**’
@@ -92,7 +93,7 @@ Enter password:
  ‘**cd train**’
  ‘**ls**’ (list) show all files in this folder
 
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png![image](https://user-images.githubusercontent.com/112356421/191619844-fa72008a-f6b2-408c-b080-dd1820376341.png)
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture2.png![image](https://user-images.githubusercontent.com/112356421/191620181-72044660-2b48-4124-ab6c-0388b367bb25.png)
 " alt="Alt text" title="Optional title">
 
 We can see we have four txt.file in the train folder. They correspond to the four data that we did earlier
