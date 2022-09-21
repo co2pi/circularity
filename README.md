@@ -131,7 +131,7 @@ If your running step is not large enough, your result may appear ‘UNK’
 
 ### **3. How to train the model:**
 
-‘**cd ~**’ go back to main directory
+**‘cd ~’** go back to main directory
 
 ‘**cd 2022s2s/seq2seq**’ re-enter the seq2seq directory
 
