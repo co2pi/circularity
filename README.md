@@ -105,21 +105,26 @@ We can see we have four txt.file in the train folder. They correspond to the fou
 
 ’**nano xxxx(file’s name)**’ to edit the data. 
 
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture3.png " alt="Alt text" title="Optional title">!
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture3.png " alt="Alt text" title="Optional title">
+
 Press: 	control + O
 		Enter
 		control + X
 		Enter
+		
 Do it 4 times until all files(target.txt; sources.txt; vocab target.txt; vocab sources.txt) are filled with your data
 
 ### 2. How to adjust running step:
 
 ‘**cd ~**’
+
 ‘**cd 2022s2s/seq2seq**’
+
 ‘**nano CVM_train.sh**’
+
 scroll down find the place where ’TRAIN_STEP = **XXXXX**’
 Change the number to any running step you want
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture4.png " alt="Alt text" title="Optional title">!
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture4.png " alt="Alt text" title="Optional title">
 
 If your running step is not large enough, your result may appear ‘UNK’
-<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture5.png " alt="Alt text" title="Optional title">!
+<img src="https://github.com/co2pi/circularity/blob/main/photo/Picture5.png " alt="Alt text" title="Optional title">
