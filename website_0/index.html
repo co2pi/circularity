@@ -1,1 +1,104 @@
-web
+#Why:
+This model can help people become more aware of the carbon emissions of the products they use, giving them the opportunity to re-select whether to use the product based on the amount of carbon emissions. When people have this tool to quickly convert products to carbon emissions, people's response may be an important factor in our study. Further, hope this model can contribute to environmental protection.
+
+How to use our model:
+We could use our phone to take photo of the objects and upload. Through our model, we can receive the CO2 emissions produced by each step in the process of producing this object.
+
+
+
+
+
+#The detailed process of our model:
+
+The information for 2_20210910WA_ data_input_CVM_network and vectors.pdf:
+
+We divide the process of building CO2 sequestration networks and vectors to three part and total seven steps by using the machine learning tool of classification, recognition, and deep learning. We will input our image data about an object to train the model and receive the out put graph from the trained model. The output graph is the simplified version of the ‘circularity’ diagram, which shows the carbon values as distances from a circle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+We can make a realistic graph, from the inputs of carbon on the production network of Yakultn as an example to illustrate our process. 
+
+
+From the input object graph, we need to convert the graph to the data we need. We describe the supply chain and the disposal chain by conceptualizing and encoding the steps in a supply-disposal chain model. From the consumption vectors, we can make this graph, which shows the inputs of carbon on the production ‘circle’ of blueJeans. The circle is the the beginning to the end of the blueJeans product. 
+
+
+Then, we get consumption vectors (CV) (left picture) from the entropy graph by use this tool http://www.entropynetwork.com/doc2/? jsonURL=%2Fpub%2Fdata%2Feco2%2F20210910023129- jesse-yakult-CVM-diverge6-segment2- diagram.json&xres=2048&yres=2048&imageURL=  and add the top vector.
+
+
+From the consumption vectors, we can make this graph (right picture), which shows the inputs of carbon on the production ‘circle’ of blueJeans. The circle is the the beginning to the end of the blueJeans product. 
+
+ 
+
+Symbol is a label for an object, and the label for several models of that object There are infinite objects, models, and symbols. After building consumption vectors graph, we will match our source and target to preparing for the training of our model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+During the process of matching , we need to be careful with the production we may describe the actions of a machine, as in: Machine + Protocol. In our model, instead of being domain restricted, we can use general terms, 'Object', and 'Behavior' of the object. 
+
+The Symbols which we use, that represent positions in the chain, can only have one CO2 value. If an object may have multiple CO2 values, it is necessary to create multiple symbols. For example, 
+Person_DriveCar1 Person_DriveCar2.
+
+After completing the above steps, we could train and run our model and receive the output graph.
