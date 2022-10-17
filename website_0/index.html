@@ -1,3 +1,549 @@
+<html><head><meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+
+<title>A circularity accounting model for CO2</title>
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Julius+Sans+One" rel="stylesheet">
+
+</head>
+ 
+ 
+
+
+
+	<style type="text/css">
+
+
+		<!--
+		
+		body,td,th，p, div{
+			Xtext-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			-Xwebkit-text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			-Xmoz-text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+			*Xfilter: Glow(color=#fff, strength=1);
+ 			Xfont-size: 6vw;
+		}
+	
+	
+
+
+body {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	font-size: 14pt;
+	Xfont-weight: 800;
+	padding:4vw;
+}
+
+.podo {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	Xfont-size: 8vw;
+	Xfont-weight: 800;
+	
+}
+
+.podoB {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	font-size: 9vw;
+	Xfont-weight: 800;
+	
+}
+
+
+
+.footer {
+font-family: 'Cormorant Garamond','STSong',serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+ 	font-size: 4vw;
+	Xfont-weight: 800;
+	
+}
+
+
+
+img {
+border: 0px none;
+}
+
+p {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+
+Xcolor: #808080;
+line-height: 20px;
+text-decoration: none;
+}
+
+p2 {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+Xfont-size: 1vw;
+color: #808080;
+line-height: 20px;
+text-decoration: none;
+}
+
+
+pB {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+Xfont-size: 3vw;
+color: #019FDC;
+
+text-decoration: none;
+}
+
+.dp{
+Xdisplay: block;
+-moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+-ms-transform: scale(-1, 1);
+transform: scale(-1, 1);
+font-size: 8vw;
+}
+
+
+.steady{
+		position: absolute;
+		left: 115px;
+		top: 115px;
+		z-index: 2;
+	}
+
+a {
+        color: #019FDC;
+        text-decoration: none;
+}
+a:visited {
+
+
+	color: #019FDC;
+
+	text-decoration: none;
+}
+a:hover {
+
+
+	color: #019FDC;
+
+	text-decoration: underline;
+}
+
+
+#Xdout:not(:hover){
+  -webkit-transition: all 5s ease;
+  -webkit-transform: scale3d(0.98,0.98,0.98);
+}
+
+#Xdout:hover{
+	
+  -webkit-transition: all 2s ease;
+  -webkit-transform:   scale3d(1,1,1);
+
+}
+#dout:active  {
+  -webkit-transition: all 0.2s ease;
+  -webkit-transform:  scale3d(0.9,0.9,0.9)  rotate3d(1, 1,0,35deg);
+  -webkit-text-stroke:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+}
+
+#dout  {
+  font-size: 12pt;
+}
+
+
+
+
+	
+	body{
+		-moz-transform: perspective(1000px);
+		-Xwebkit-perspective: 10000vw; /* Chrome, Safari, Opera */
+		transform: perspective(1000vw);
+		}
+	
+	
+	
+	#examplar {
+		text-shadow: #8b2121 1px 0 0,#fff 0 1px 0,#12c715 -1px 0 0,#fff 0 -1px 0;
+ 
+ 
+	}
+	#video {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 1;
+	}
+	
+	#allUI {
+		position: absolute;
+		left: 115px;
+		top: 115px;
+		z-index: 2;
+	}
+	
+	
+
+path {
+  fill: transparent;
+stroke: black;
+Xstroke-width: 0.3;
+}
+
+text {
+Xletter-spacing: 0.6em;
+font-size: 15px;
+fill: #000000;
+
+}
+
+button {
+width:33%;
+height:33%;
+}
+
+#press:not(:hover){
+  -webkit-transition: all 5s ease;
+  -webkit-transform: scale3d(0.98,0.98,0.98);
+}
+
+#press:hover{
+	
+  -webkit-transition: all 0.2s ease;
+  -webkit-transform:  rotate3d(1, 1,0,-5deg);
+
+}
+#press:active  {
+  -webkit-transition: all 0.1s ease;
+  -webkit-transform:  scale3d(0.8,0.8,0.8)  rotate3d(1, 1,0,35deg);
+  -webkit-text-stroke:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+}
+
+#Xpress:not(:active)  {
+  -webkit-transition: all 15s ease;
+  -Xwebkit-transform:  scale3d(1,1,1);
+  -webkit-text-stroke:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+}
+
+
+img {
+border: 0px none;
+}
+
+Xp {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 2vw;
+color: #808080;
+line-height: 20px;
+text-decoration: none;
+}
+
+psmall {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 2vw;
+color: #808080;
+Xline-height: 20px;
+text-decoration: none;
+}
+psmallwhite {
+font-family: Avenir Next, Barlow, Helvetica, sans-serif;
+font-size: 3.5vw;
+color: #FFFFFF;
+Xline-height: 70px;
+text-decoration: none;
+}
+pbigwhite {
+font-family: Avenir Next, Barlow, Helvetica, sans-serif;
+font-size: 4.2vw;
+color: #FFFFFF;
+Xline-height: 25px;
+text-decoration: none;
+}
+
+
+
+pB {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 3vw;
+Xcolor: #019FDC;
+color: lightblue;
+text-decoration: none;
+}
+
+pT {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 7vw;
+color: #000000;
+
+text-decoration: none;
+}
+
+.states {
+font-family: Palatino;
+Xfont-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 2.3vw;
+color: #FFFFFF;
+
+text-decoration: none;
+}
+
+
+a:visited {
+
+
+	color: #019FDC;
+
+	text-decoration: none;
+}
+a:hover {
+
+
+	color: #019FDC;
+
+	text-decoration: underline;
+}
+
+
+path {
+  fill: transparent;
+stroke: black;
+Xstroke-width: 0.3;
+}
+-->
+
+
+	-->
+	
+	</style>
+
+
+
+
+<script desc="This just switches to HTTPS, its not needed, but it looks nice.">
+if (location.protocol != 'https:') {
+//  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+location.href = 'https://entropynetwork.com/circularity' ;
+}
+</script> 
+
+
+<body   >
+ 
+<div class="main_inner" >
+
+<br>
+
+<table border=0 style="padding:5vw" >
+<tr>
+<td valign=bottom>
+
+<a href=app.html>
+<center>
+<img height=200px style="height:20vw; padding:5vw" src=appicon.png >
+<br>
+<div style="font-size:3vw;font-family: 'Montserrat',Ubuntu,sans-serif;font-weight: 300;" >
+<b>Circularity Graph<br>Input Editor
+<div>
+</b>
+
+</a>
+
+</td>
+
+<td valign=bottom>
+<center>
+<img height=200px style="height:20vw; padding:5vw" src=vid/20211121WA_james_tutorial.png>
+<br>
+<div style="font-size:1.5vw;font-family: 'Montserrat',Ubuntu,sans-serif;font-weight: 300;">
+<a href=http://entropynetwork.com/circularity/vid/20211121WA_james_tutorial.mp4>Circularity model data input tutorial</a> video (mp4, 70Mb)<br>
+or youtube: <a href=https://youtu.be/3WnhQkucx70>https://youtu.be/3WnhQkucx70</a></div><br></center>
+</td>
+
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<div class="col-sm-8 abstract-main-col">
+				
+				
+
+<div class="box-container box-abstract-main">
+	
+	
+
+	
+	
+	
+	<h1>A circularity accounting model for CO2: worksite for neural network model  training data and case study design.</h1>
+<div class="reference-info">
+</div>
+    
+ 
+
+
+	<div class="abstract-text">
+This worksite supports development of a CO2 estimator and a CO2 production-consumption chain predictor, in order to re-assess the use of CO2 across global supply chains. The data input tool for graphing CO2 chains is (<a href=/circularity/app.html>here</a>). The code repository for training sequence models is here: <a href=https://github.com/co2pi/circularity>https://github.com/co2pi/circularity</a>.<br><br>
+In the view that the rise in CO2 emissions has been exponential, this project engages the exponential growth of artificial intelligence models to work in concert with individual action, mediated by a circularity accounting model. The model architecture is based on a deep learning neural network in several modules. Training of the network modules can be designed using the graph tool on this page. Existing data from case studies may be opened in the graph editor.
+	</div>
+
+	
+		
+	
+	 
+		
+ 	<div  ><strong>Keywords:</strong> circular economy, climate change, artificial neural networks, individual based accountings, sustainability accounting	</div>
+	
+	 
+ 
+		<strong class="hidden-xs hidden-sm">Project information:</strong>
+ 
+ 
+
+	<div  >
+		
+			Project group: Forrest Fabian Jesse, Carla Antonini, Mercedes Luque, Xianling Guo ; project assistant: James Wenlock. An overview of the circularity accounting model for CO2 in a preprint: <a href="https://dx.doi.org/10.2139/ssrn.3955167" class="textlink" target="_blank">http://dx.doi.org/10.2139/ssrn.3955167 </a>
+	
+<br>
+<br><br> <b>What is Circularity Accounting?</b><br>
+<br>
+CO2 increase is a main contributor to climate change, but this vast impact is not well quantified in terms of individual human behaviors. We developed a hypothesis that an individual’s knowledge of the CO2 production cost of objects might affect behavior. To investigate this, we develop a deep-learning CO2 estimator, and a theoretical CO2 circularity accounting model.
+<br>
+The project completed a very rough prototype deep learning model architecture in 2021, which is described in the above preprint. The next step for the project is data collection on the impact of the knowledge of CO2 production on behavior. We hope to begin studies in the European Union in mid-2022.
+<br>
+We are now able to view in our societies, the interaction of individual behavior with machine intelligence. In our work, CO2 use behavior data can indicate how people’s behavior changes when the CO2 production cost of objects is presented to them via a deep learning system. More useful may be obtaining a global view on how the behavior of individuals in society is impacted by machine intelligence systems. 
+<br>
+This is a collaborative project, its topic is of interest to global science communities and allows connection through many fields. Better communication and research relationships are developed among the project’s contributors in: CO2 accounting and social theory, environmental science, machine learning. This research connects these areas. 
+<br><br>
+<b>Our work</b><br>
+<br>
+The two primary tools that we use to estimate CO2 and present these values are [1] a deep learning architecture, and [2] a mobile device screen. In our first paper, we demonstrate only one object, and one individual making a CO2 estimate of the object. Our next step is to look at the impact on behavior in a larger survey of both people and objects. 
+<br>
+1] We must expand the training data which we use to develop and train the machine learning models. 
+2] We must streamline interaction for more diverse estimates in larger behavior surveys.
+<br>
+The immediate value to society and our communities is the development of a versatile and more complete means to investigate and analyze carbon chains. Chains’ interaction with economic systems is a fundamental for human development and economic planning. Macro-scale knowledge and competency for carbon analysis of the carbon landscape is of global concern and informs and shapes the immediacy of other work. 
+<br><br>
+<b>The future</b><br>
+<br>
+The project is multi-disciplinary, spanning accounting and social theory, CO2 modeling, environmental science, and machine learning.
+<br>
+In the broad view, the project seeks to make possible the quantification of a circular carbon economy, where economic objects are valued in carbon units. Circular carbon economy is a theoretical equilibrium which production and consumption of carbon sequestration occurs at equivalent rates, it produces a ‘Carbon-Neutral’ state of economy. This objective is of interest to many fields, while the component tools are also useful themselves.
+<br>
+The impact of knowledge of the CO2 values of objects on individual behavior is still not well known or understood, and CO2 deep learning models for objects are in a formative stage. CO2 is a ubiquitous and critical presence throughout science and economy, it should be quantified, and this is a way to do it.
+
+
+	
+	</div>
+	
+
+<br>
+<br>	
+	<div class="contact-information">
+			
+	<div class="author">
+
+						<h3><a href="https://escience.washington.edu/people/forrest-fabian-jesse/" target="_blank">Forrest Fabian Jesse</a></h3>
+					
+		
+		<div class="block-quote">
+				<h4>University of Washington </h4>
+	 
+					<span>Seattle, WA  98195<br>United States<br></span>
+ 
+		</div>
+			</div>
+	
+
+	
+	<div class="author">
+
+
+		
+		<div class="block-quote">
+
+			
+				<h4>Xixuan Laboratory </h4>
+ 
+					<span>National University Sci.Tech. Bld. 13th Floor<br>Beijing Jiaotong Un. E.<br>Beijing, Beijing 100044<br>China<br></span>
+ 
+		</div>
+			</div>
+	
+
+	
+	<div class="author">
+						<h3><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=867292" target="_blank">Carla Antonini</a></h3>
+
+		<div class="block-quote">
+
+				<h4>Universidad Autónoma de Madrid </h4>
+ 
+					<span>Campus Cantoblanco<br>C/Kelsen, 1<br>Madrid, Madrid 28049<br>Spain<br></span>
+ 
+		</div>
+			</div>
+	
+
+	
+	<div class="author">
+
+						<h3><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3813706" target="_blank">Mercedes Luque</a></h3>
+
+		<div class="block-quote">
+
+				<h4>Universidad Nacional de Córdoba </h4>
+ 
+					<span>Plaza de Puerta Nueva, s/n<br>Córdoba, Córdoba 14002<br>Spain<br></span>
+ 
+		</div>
+			</div>
+	
+	</div>
+
+</div>
+
+                </a>
+            </div>
+        
+                </a>
+            </div>
+        
+</div>
+
+			</div>
+
+
+
+
+
 #Why:
 This model can help people become more aware of the carbon emissions of the products they use, giving them the opportunity to re-select whether to use the product based on the amount of carbon emissions. When people have this tool to quickly convert products to carbon emissions, people's response may be an important factor in our study. Further, hope this model can contribute to environmental protection.
 
