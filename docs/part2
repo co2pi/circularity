@@ -1,0 +1,50 @@
+The detailed process of our model:
+
+<p>Step 1
+We divide the process of building CO2 sequestration networks and vectors into three parts and a total of
+seven steps by using the machine learning tool of classification, recognition, and deep learning. We will input
+our image data about an object to train the model and receive the output graph from the trained model. The
+output graph is the simplified version of the ‘circularity’ diagram, which shows the carbon values as
+distances from a circle.
+
+<p><b>Step 2</b><p>
+We can make a realistic graph, from the inputs of carbon on the production network of Yakultn as an
+example to illustrate our process.
+<p>  
+We need to convert the graph from the input object graph to the data we need. We describe the supply and
+disposal chain by conceptualizing and encoding the steps in a supply-disposal chain model. From the
+consumption vectors, we can make this graph, which shows the inputs of carbon on the production ‘circle’ of
+blueJeans. The circle is the beginning to the end of the blueJeans product
+<p>
+<img src=5.png border=1>
+
+<p><b>Step 3</b><p>
+Then, we get consumption vectors (CV) (left picture) from the entropy graph by using this tool
+http://www.entropynetwork.com/doc2/? jsonURL=%2Fpub%2Fdata%2Feco2%2F20210910023129- jesse-yakult-
+CVM-diverge6-segment2- diagram.json&xres=2048&yres=2048&imageURL= and add the top vector.
+<p>
+From the consumption vectors, we can make this graph (right picture), which shows the inputs of carbon on
+the production ‘circle’ of blueJeans. The circle is the beginning to the end of the blueJeans product.
+<p>
+<img src=10.png border=1>
+
+<p><b>Step 4</b><p>
+The symbol is a label for an object and the label for several models of that object. There are infinite objects,
+models, and symbols. After building the consumption vectors graph, we will match our source and target to
+prepare for the training of our model.
+<p>
+<img src=7.png border=1>
+  
+
+<p><b>Step 5</b><p>
+During the process of matching, we need to be careful with the products we may describe the actions of a
+machine, as in Machine + Protocol. In our model, instead of being domain restricted, we can use general
+terms, ‘Object' or 'Behavior'.
+<p>  
+The Symbols which represent positions in the chain can only have one CO2 value. If an object may have
+multiple CO2 values, it is necessary to create multiple symbols. For example, Person_DriveCar1
+Person_DriveCar2.
+<p>  
+After completing the above steps, we could train and run our model and receive the output graph.
+<p>
+<img src=9.png border=1>
