@@ -13,7 +13,7 @@ test_image_name =
 # image of icon
 icon_image = 'https://discord.com/channels/1004522466170908772/1008559836646088765/1049562691234189332'
 
-Object_description_file_path = 'CCaLC_V3/Broccoli (fresh)-Table 1.csv'
+object_description_file_path = 'CCaLC_V3/Broccoli (fresh)-Table 1.csv'
 # Long_object_description[2][13]
 
 #web link URL
@@ -23,16 +23,20 @@ CVM_graph = 'http://www.entropynetwork.com/doc2/?jsonURL=%2Fpub%2Fdata%2F230128%
 CVM_graph_image = '20221023_kristin_training_metadata/Broccoli (fresh)/Screen Shot 2022-10-23 at 15.23.14.png'
 
 #CVM_Symbol file
-CVM_Symbol = '2022s2s/seq2seq/nmt_data/20221013_bfresh_CVM/train/sources.txt'
+CVM_symbol = '2022s2s/seq2seq/nmt_data/20221013_bfresh_CVM/train/sources.txt'
 
 #CVM_CO2 file
 CVM_CO2 = '2022s2s/seq2seq/nmt_data/20221013_bfresh_CVM/train/targets.txt'
 
-#CVM model
-CVM_model = 'cynthia@surplus:~/2022s2s/s2s_models/20221013_bfresh_CVM/'
+#CVM model from 20230226
+#kristin@Octavia, where the model is located.
+CVM_model = '2022s2s/s2s_models/20221013_bfresh_CVM/'
+#old location（current location）until 20230226
+#CVM_model = 'cynthia@surplus:~/2022s2s/s2s_models/20221013_bfresh_CVM/'
 
 #image classifier model
 image_classifier = 'http://10.158.221.197:2020/edit/image_classifier/20221201_broccoli_detector.h5'
 
 #state of CVM model: the test result is good
 #state of image classifier: the test result is good
+
