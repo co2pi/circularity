@@ -14,7 +14,7 @@ Our goal is to organize data so that it can be trained into models of CO2 chains
 4] What are the CO2 chains?
 
 
-[3] **The model architectures**
+## The model architectures
 The model architecture is based on front-stage image detectors and recognizers connected to production chain sequence models. this repository contains the sequence training tools.
 
 ## Building our data
