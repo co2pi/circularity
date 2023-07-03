@@ -148,5 +148,6 @@ After train the model, continue type (which means we are in the same directory a
 Press **enter**
 **Copy the last line of the code run it.**
 <img src="https://github.com/co2pi/circularity/blob/main/photo/Picture6.png " alt="Alt text" title="Optional title">
+<br>
 The result will post on the website. 
 
